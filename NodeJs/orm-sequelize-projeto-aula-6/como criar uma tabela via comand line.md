@@ -1,0 +1,1 @@
+npx sequelize-cli modelcreate --name Clientes --attributes nomestring,data_nascdateonly,creditofloat
