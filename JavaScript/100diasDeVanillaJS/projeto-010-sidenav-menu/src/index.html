@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Barra de Menu Lateral</title>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo__content">
+        <div class="logo">
+          <i class="bx bx-atom"></i>
+          <div class="logo__name">rangel.dev</div>
+        </div>
+        <i class="bx bx-menu" id="btn"></i>
+      </div>
+      <ul class="nav__list">
+        <li>
+          <i class="bx bx-search"></i>
+          <input type="text" placeholder="Pesquisar..." />
+
+          <span class="tooltip">Pesquisa</span>
+        </li>
+
+        <li>
+          <a href="#">
+            <i class="bx bxs-dashboard"></i>
+            <span class="links__name">Dashboard</span>
+          </a>
+          <span class="tooltip">Dashboard</span>
+        </li>
+
+        <li>
+          <a href="#">
+            <i class="bx bx-user"></i>
+            <span class="links__name">Perfil</span>
+          </a>
+          <span class="tooltip">Perfil</span>
+        </li>
+
+        <li>
+          <a href="#">
+            <i class="bx bx-chat"></i>
+            <span class="links__name">Mensagens</span>
+          </a>
+          <span class="tooltip">Mensagens</span>
+        </li>
+
+        <li>
+          <a href="#">
+            <i class="bx bx-pie-chart-alt-2"></i>
+            <span class="links__name">Gráficos</span>
+          </a>
+          <span class="tooltip">Gráficos</span>
+        </li>
+
+        <li>
+          <a href="#">
+            <i class="bx bx-folder"></i>
+            <span class="links__name">Arquivos</span>
+          </a>
+          <span class="tooltip">Arquivos</span>
+        </li>
+
+        <li>
+          <a href="#">
+            <i class="bx bx-cart-alt"></i>
+            <span class="links__name">Pedidos</span>
+          </a>
+          <span class="tooltip">Pedidos</span>
+        </li>
+
+        <li>
+          <a href="#">
+            <i class="bx bx-bookmark"></i>
+            <span class="links__name">Salvo</span>
+          </a>
+          <span class="tooltip">Salvo</span>
+        </li>
+
+        <li>
+          <a href="#">
+            <i class="bx bx-cog"></i>
+            <span class="links__name">Configurações</span>
+          </a>
+          <span class="tooltip">Configurações</span>
+        </li>
+      </ul>
+      <div class="profile__content">
+        <div class="profile">
+          <div class="profile__details">
+            <img src="img/profile.jpg" alt="Imagem de perfil" />
+            <div class="name__job">
+              <div class="name">Walter White</div>
+              <div class="job">Químico</div>
+            </div>
+          </div>
+          <i class="bx bx-log-out" id="log_out"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="home_content">
+      <div class="text">Conteúdo Principal</div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

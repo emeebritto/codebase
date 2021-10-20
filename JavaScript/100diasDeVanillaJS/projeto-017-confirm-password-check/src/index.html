@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <title>Confirmação de senha</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>Confirmação de senha usando HTML, CSS e Javascript</header>
+      <form action="">
+        <div class="error-text"></div>
+        <div class="field">
+          <input onkeyup="active()" id="senha_1" type="password" placeholder="Digite sua senha..." />
+        </div>
+        <div class="field">
+          <input onkeyup="active_2()" id="senha_2" disabled type="password" placeholder="Confirme sua senha..." />
+          <div class="show">MOSTRAR</div>
+        </div>
+        <button disabled>Confirmar</button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #30363d;
+  color: white;
+}
+
+.accordion {
+  max-width: 1000px;
+}
+
+.accordion .contentBx {
+  position: relative;
+  margin: 10px 20px;
+}
+
+.accordion .contentBx .label {
+  position: relative;
+  padding: 10px;
+  background: #010409;
+  cursor: pointer;
+}
+
+.accordion .contentBx .label::before {
+  content: url("./expand_more_white_24dp.svg");
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+}
+
+.accordion .contentBx.active .label::before {
+  content: url("./expand_less_white_24dp.svg");
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+}
+
+.accordion .contentBx .content {
+  position: relative;
+  background: #0d1117;
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  overflow-y: auto;
+}
+
+.accordion .contentBx.active .content {
+  height: 130px;
+  padding: 10px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

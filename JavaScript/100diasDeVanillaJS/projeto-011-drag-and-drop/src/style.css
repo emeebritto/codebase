@@ -1,0 +1,37 @@
+body {
+  background: #121214;
+}
+
+.fill {
+  background-color: #7159c1;
+  position: relative;
+  height: 150px;
+  width: 150px;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+}
+
+.hold {
+  border: solid 5px #29292e;
+  border-radius: 7px;
+}
+
+body {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.empty {
+  display: inline-block;
+  height: 160px;
+  width: 160px;
+  margin: 10px;
+  border: solid 2px#E83F5B;
+  background: #29292e;
+}
+
+.hovered {
+  background: #4b4b53;
+  border-style: dashed;
+}

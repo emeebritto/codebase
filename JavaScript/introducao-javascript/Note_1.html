@@ -1,0 +1,391 @@
+// Query Selector -----------------------------------------------
+
+
+    var titulo = document.querySelector("h1");
+        // document.querySelector( x ), busca elementos dentro do html.
+        // No exemplo o conteúdo (h1) foi salvo em uma variavel 'titulo'.
+    console.log(titulo);
+    console.log(titulo.textContent);
+        // Se executarmos o console.log da linha 7, será exibido o texto é a tag <h1>.
+        // Já a linha 8, apenas o texto será exibido.
+            // Na linha 8 pedimos para exibir apenas o texto da variavel (titulo), a qual a mesma armazenava o conteúdo escaneado no html.
+
+    titulo.textContent = "Banana";    // Alterando o conteúdo.
+        // O conteúdo (em texto) que estava no 'h1', foi alterado para 'Banana' 
+
+
+// Buscando dados do paciente ------------------------------------
+
+
+    var paciente = document.querySelector("#primeiro-paciente");
+
+    var tdPeso = paciente.querySelector(".info-peso");
+    var peso = tdPeso.textContent;
+
+    var tdAltura = paciente.querySelector(".info-altura");
+    var altura = tdAltura.textContent;
+
+    var imc = peso / altura * altura; // 100 / 2.0 x 2.0 = 100 / 4 =>>>>>>> 25
+
+    console.log(imc);
+
+
+// Calculando e exibindo o IMC corretamente -------------------
+
+
+    var paciente = document.querySelector("#primeiro-paciente");
+
+    var tdPeso = paciente.querySelector(".info-peso");
+    var peso = tdPeso.textContent;
+
+    var tdAltura = paciente.querySelector(".info-altura");
+    var altura = tdAltura.textContent;
+
+
+    var tdImc = paciente.querySelector(".info-imc");
+
+    var imc = peso / (altura * altura);
+
+    tdImc.textContent = imc;
+
+
+// Operadores Lógicos -------------------------------------
+
+
+//...
+
+if (peso <= 0 || peso >= 1000) {
+    console.log("Peso inválido!");
+    pesoEhValido = false;
+    tdImc.textContent = "Peso inválido!";
+}
+
+if (altura <= 0 || altura >= 3.00){
+    console.log("Altura inválida!");
+    alturaEhValida = false;
+    tdImc.textContent = "Altura inválida!";
+}
+
+if (alturaEhValida && pesoEhValido){
+    var imc = peso / (altura * altura);
+    tdImc.textContent = imc;
+}
+
+// -------------------------------------------------------
+
+var pacientes = document.querySelectorAll(".paciente");
+console.log(pacientes);
+
+
+var pacientes = document.querySelectorAll(".paciente");
+
+for (var i = 0; i < pacientes.length; i++) {
+    console.log()
+}
+
+if (alturaEhValida && pesoEhValido) {
+    var imc = peso / (altura * altura);
+    tdImc.textContent = imc.toFixed(2);
+}
+
+var pesoEhValido = true;
+var alturaEhValida = true;
+
+if (peso <= 0 || peso >= 1000) {
+    console.log("Peso inválido!");
+    pesoEhValido = false;
+    tdImc.textContent = "Peso inválido";
+    paciente.style.color = "red";
+}
+
+var pesoEhValido = true;
+var alturaEhValida = true;
+
+if (peso <= 0 || peso >= 1000) {
+    console.log("Peso inválido!");
+    pesoEhValido = false;
+    tdImc.textContent = "Peso inválido";
+    paciente.classList.add("paciente-invalido");
+}
+
+titulo.addEventListener("click", mostraMensagem);
+
+function mostraMensagem(){
+    console.log("Olá eu fui clicado!");
+}
+
+titulo.addEventListener("click", function (){
+    console.log("Olha só posso chamar uma função anônima.")
+});
+
+var botaoAdicionar = document.querySelector("#adicionar-paciente");
+botaoAdicionar.addEventListener("click", function(){
+    console.log("Oi, cliquei no botão.");
+});
+
+// Evitando o comportamento padrão de um evento --------------------------------------------
+
+var botaoAdicionar = document.querySelector("#adicionar-paciente");
+botaoAdicionar.addEventListener("click", function(event) {
+    event.preventDefault();
+    console.log("Oi eu sou o botao e fui clicado");
+});
+
+// Adicionando pacientes na tabela ---------------------------------------------------------
+
+var botaoAdicionar = document.querySelector("#adicionar-paciente");
+botaoAdicionar.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    var form = document.querySelector("#form-adiciona");
+
+    var nome = form.nome.value;
+    var peso = form.peso.value;
+    var altura = form.altura.value;
+    var gordura = form.gordura.value;
+
+    var pacienteTr = document.createElement("tr");
+
+    var nomeTd = document.createElement("td");
+    var pesoTd = document.createElement("td");
+    var alturaTd = document.createElement("td");
+    var gorduraTd = document.createElement("td");
+    var imcTd = document.createElement("td");
+
+    nomeTd.textContent = nome;
+    pesoTd.textContent = peso;
+    alturaTd.textContent = altura;
+    gorduraTd.textContent = gordura;
+
+    pacienteTr.appendChild(nomeTd);
+    pacienteTr.appendChild(pesoTd);
+    pacienteTr.appendChild(alturaTd);
+    pacienteTr.appendChild(gorduraTd);
+
+    var tabela = document.querySelector("#tabela-pacientes");
+
+    tabela.appendChild(pacienteTr);
+
+});
+
+// -----------------------------------------------------------------------------------------
+
+botao.addEventListener('click', botaoHandler);
+botao.addEventListener('click', outroHandler);
+
+botao.onclick = botaoHandler;
+botao.onclick = outroHandler; // substitui botaoHandler
+
+
+var botao = document.querySelector('#botao');
+
+function botaoHandler() {
+
+    alert('Botão clicado');
+}
+
+ function outroHandler() {
+
+    alert('Botão clicado também!');
+}
+
+// ompressão de code -------------------------------------------------------------------------
+
+// Antes:
+
+function montaTr(paciente) {
+    var pacienteTr = document.createElement("tr");
+    pacienteTr.classList.add("paciente");
+
+    var nomeTd = montaTd(paciente.nome, "info-nome");
+    var pesoTd = montaTd(paciente.peso, "info-peso");
+    var alturaTd = montaTd(paciente.altura, "info-peso");
+    var gorduraTd = montaTd(paciente.gordura, "info-gordura");
+    var imcTd = montaTd(paciente.imc, "info-imc");
+
+    pacienteTr.appendChild(nomeTd);
+    pacienteTr.appendChild(pesoTd)
+    pacienteTr.appendChild(alturaTd)
+    pacienteTr.appendChild(gorduraTd)
+    pacienteTr.appendChild(imcTd)
+
+    return pacienteTr;
+}
+
+// Depois:
+
+function montaTr(paciente){
+    var pacienteTr = document.createElement("tr");
+    pacienteTr.classList.add("paciente");
+
+    pacienteTr.appendChild(montaTd(paciente.nome, "info-nome"));
+    pacienteTr.appendChild(montaTd(paciente.peso, "info-peso"));
+    pacienteTr.appendChild(montaTd(paciente.altura, "info-altura"));
+    pacienteTr.appendChild(montaTd(paciente.gordura, "info-gordura"));
+    pacienteTr.appendChild(montaTd(paciente.imc, "info-imc"));
+
+// -------------------------------------------------------------------------------------------
+
+var botaoAdicionar = document.querySelector("#adicionar-paciente");
+botaoAdicionar.addEventListener("click", function(event) {
+    // restante do código
+    tabela.appendChild(pacienteTr);
+
+    form.reset();
+
+});
+
+if (!pesoEhValido) {
+    console.log("Peso inválido!");
+    pesoEhValido = false;
+    tdImc.textContent = "Peso inválido!";
+    paciente.classList.add("paciente-invalido");
+}
+
+function exibeMensagensDeErro(erros) {
+    var ul = document.querySelector("#mensagens-erro");
+    ul.innerHTML = "";
+
+    erros.forEach(function(erro) {
+        var li = document.createElement("li");
+        li.textContent = erro;
+        ul.appendChild(li);
+    });
+}
+
+// ForEach -------------------------------------------------------------------------------
+
+function exibeMensagensDeErro(erros){
+    var ul = document.querySelector("#mensagens-erro");
+    for(var i = 0; i < erros.lenght ; i++){
+        var erro = erros[i];
+    }
+}
+
+function exibeMensagensDeErro(erros){
+    var ul = document.querySelector("#mensagens-erro");
+    erros.forEach(function(erro){
+        var li = document.createElement("li");
+        li.textContent = erro;
+        ul.appendChild(li);
+    });
+}
+
+// duplo clique ----------------------------------------------------------------------------
+
+var pacientes = document.querySelectorAll(".paciente");
+
+pacientes.forEach(function(paciente) {
+    paciente.addEventListener("dblclick", function() {
+
+    });
+});
+
+var pacientes = document.querySelectorAll(".paciente");
+
+pacientes.forEach(function(paciente) {
+    paciente.addEventListener("dblclick", function() {
+        this.remove();
+    });
+});
+
+var tabela = document.querySelector("table");
+
+tabela.addEventListener("dblclick", function(event) {
+    event.target.remove();
+});
+
+var tabela = document.querySelector("table");
+
+tabela.addEventListener("dblclick", function(event) {
+    event.target.parentNode.remove();
+});
+
+var tabela = document.querySelector("#tabela-pacientes");
+
+tabela.addEventListener("dblclick", function(event) {
+    event.target.parentNode.classList.add("fadeOut");
+
+// Pausa um tempo ------------------------------------------------------------------------------
+
+    setTimeout(function() {
+        event.target.parentNode.remove();
+    }, 500);
+
+});
+
+// --------------------------------------------------------------------------------------------
+
+var campoFiltro = document.querySelector("#filtrar-tabela");
+
+campoFiltro.addEventListener("input", function(){
+    console.log("Digitaram no campo");
+});
+
+var campoFiltro = document.querySelector("#filtrar-tabela");
+
+campoFiltro.addEventListener("input", function(){
+    console.log(this.value);
+    var pacientes = document.querySelectorAll(".paciente");
+
+    if (this.value.length > 0){
+        for (var i = 0; i < pacientes.length; i++){
+            var paciente = pacientes[i];
+            var tdNome = paciente.querySelector(".info-nome");
+            var nome = tdNome.textContent;
+            if (nome != this.value){
+                paciente.classList.add("invisivel");
+            } else {
+                paciente.classList.remove("invisivel");
+            }
+        }
+    } else {
+        for (var i = 0; i < pacientes.length; i++) {
+            var paciente = pacientes[i];
+            paciente.classList.remove("invisivel");
+        }
+    }
+});
+
+
+var campoFiltro = document.querySelector("#filtrar-tabela");
+
+campoFiltro.addEventListener("input", function(){
+    console.log(this.value);
+    var pacientes = document.querySelectorAll(".paciente");
+
+    if (this.value.length > 0) {
+        for (var i = 0; i < pacientes.length; i++) {
+            var paciente = pacientes[i];
+            var tdNome = paciente.querySelector(".info-nome");
+            var nome = tdNome.textContent;
+            var expressao = new RegExp(this.value, "i"); 
+
+            if (!expressao.test(nome)) {
+                paciente.classList.add("invisivel");
+            } else {
+                paciente.classList.remove("invisivel");
+            }
+        }
+    } else {
+        for (var i = 0; i < pacientes.length; i++) {
+            var paciente = pacientes[i];
+            paciente.classList.remove("invisivel");
+        }
+    }
+});
+
+var botaoAdicionar = document.querySelector("#buscar-pacientes");
+
+botaoAdicionar.addEventListener("click", function() {
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "https://api-pacientes.herokuapp.com/pacientes");
+
+    xhr.addEventListener("load", function(){
+        console.log(xhr.responseText);
+
+    });
+
+    xhr.send();
+});
