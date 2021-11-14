@@ -1,8 +1,8 @@
 import React from "react";
 import Styled from "styled-components";
-import { Route, Switch, Redirect, useRouteMatch } from 'react-router-dom'
+import { Route, Switch, Redirect, useRouteMatch } from 'react-router-dom';
 
-import { PlaylistsRow, DiskLibrary } from 'components'
+import { PlaylistsRow, DiskLibrary } from 'components';
 
 const ViewPort = Styled.section`
     overflow-y: scroll;
