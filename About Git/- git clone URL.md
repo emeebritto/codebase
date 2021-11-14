@@ -1,0 +1,35 @@
+- git init
+- git init --bare (it's work like a serve)
+- git init
+- git init --bare (it's work like a serve)
+- git config --local (or --global) user.name YOUR-NAME
+- git config --local (or --global) user.email YOUR-MAIL
+- git clone URL
+- git remote (get repository list)
+- git remote add URL NAME (name is optional)
+- git status
+- git log
+- git log --graph (view develop lines - branchs)
+- git log --oneline (view each commit in one lines)
+- git add FILE
+- git add . (all folder/files)
+- git commit -m COMMIT
+- git push REPOSITORY LOCAL-BRANCH
+- git pull  REPOSITORY LOCAL-BRANCH
+- git branch BRANCH-NAME
+- git branch (view branch list
+- git checkout BRANCH-NAME (switch to branch)
+- git checkout -b BRANCH-NAME (create and switch to branch)
+- git checkout -- FILE-NAME (restore files)
+- git checkout COMMIT-HASH (back to commit states - usually tests)
+- git merge BRANCH-NAME
+- git rebase BRANCH-NAME
+- git stash (save temporary content - no require commits)
+- git stash list
+- git stash apply STASH-NUM
+- git stash drop STASH-NUM
+- git stash pop (apply and drop)
+- git diff COMMIT-HASH..COMMIT-HASH (compare commits)
+- git diff (view change that no was commited)
+- git tag -a VERSION -m NAME/COMMIT
+- git tag (list)
