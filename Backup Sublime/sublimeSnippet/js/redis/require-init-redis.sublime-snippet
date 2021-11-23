@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+const redisDB = redis.createClient(/*'redis://redis-c258.cloud.redislabs.com:10284'*/, {
+    password: 'hBmsffdfsdfsZsfsS8Rkgdfddf8yXpF0dff5'
+});
+
+const setAsync = promisify(redisDB.set).bind(redisDB);
+const existsAsync = promisify(redisDB.exists).bind(redisDB);
+const getAsync = promisify(redisDB.get).bind(redisDB);
+const delAsync = promisify(redisDB.del).bind(redisDB);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>redis.init</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js || source.jsx</scope>
+</snippet>

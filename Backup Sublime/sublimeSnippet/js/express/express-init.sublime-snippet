@@ -1,0 +1,24 @@
+<snippet>
+	<content><![CDATA[
+const express = require('express');
+const path = require('path');
+
+app = express();
+
+const PORT = process.env.PORT || ${1:3476};
+
+app.get('/', (req, res) => {
+	res.json({msg: 'OK'});
+});
+
+app.listen(PORT, () => {
+    console.log('Started: ' + new Date())
+    console.log('port: ' + PORT)
+})
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>express.init</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js || source.jsx</scope>
+</snippet>

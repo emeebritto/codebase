@@ -1,0 +1,351 @@
+// SECTION  X  DIV --------------------------------------------------------------
+
+
+    // Qual a diferença entre usar uma <div> ou uma <section>?
+        // Para um bloco onde o conteúdo tenha o mesmo significado, o mesmo sentido, usamos uma <section>.
+
+
+// MULTIPLICAR ESTILO -----------------------------------------------------------
+
+
+font-size: 2em;
+
+    // Observe que não adicionamos 'px' ao final do parametro.
+        // 'em' significa que o valor definido multiplica o valor da base.
+        // Transcrevendo a linha 4 : Aumentar em 2x o tamanho da fonte original (base).
+
+
+// PROPRIEDADE FLOAT ------------------------------------------------------------
+
+    
+    // Colar o elemento na lateral e deixar os outros elementos ao redor.
+        // Tanto o 'float:left' quanto o 'float: right' servem para que o elemento se destaque na tela, deixe de ocupar o espaço em que estava, para que os outros elementos possam se posicionar ao redor dele.
+
+// IMPORTAÇÃO DE FONTS ----------------------------------------------------------
+
+
+    // No site Google Fonts, encontramos uma biblioteca de fontes (mais de 900 Fontes).
+        // Basta selecionar a fonte desejada.
+        // Não é necesario baixar a fonte no dispositivo local.
+            // O site deixa um link de incorporação disponivel ( não é espirito :} ).
+            // Desse jeito (OU SEMELHANTE) :
+
+	            <link rel="preconnect" href="https://fonts.gstatic.com">
+	            <link href="https://fonts.googleapis.com/css2?family=Amaranth&display=swap" rel="stylesheet">
+
+            // Isso deve ser adicionado no <head> do seu 'HTML'.
+
+        // Após isso, a fonte não estará funcionando ainda, pois é necessario adiciona-la no CSS.
+        // Exemplo :
+        
+	        body {
+	            font-family: 'Amaranth', sans-serif;
+	        }
+
+	        // Nesse exemplo, adicionei a fonte no <body> da pagina (A fonte será aplicada em toda a pagina).
+
+
+// ADIÇÃO DE MAPA E VIDEO NO SITE ------------------------------------------------------
+
+
+// ...
+
+
+// ESTILIZANDO ITENS ESPECIFICOS DENTRO DE UMA LISTA (SEM ALTERAR O HTML) --------------
+
+
+    // Temos a seguinte code: 
+
+        <div class="conteudo-beneficios">
+            <ul class="lista-beneficios">
+                <li class="itens">Atendimento aos Clientes</li>
+                <li class="itens">Espaço diferenciado</li>
+                <li class="itens">Localização</li>
+                <li class="itens">Profissionais Qualificados</li>
+                <li class="itens">Pontualidade</li>
+                <li class="itens">Limpeza</li>
+            </ul><img src="beneficios.jpg" class="imagembeneficios">
+        </div>
+
+    // Vamos deixar apenas o 'Atendimento aos Clientes' em negrito.
+        // Poderiamos faz isso no HMTL? Poderiamos, e ficaria assim:
+
+	        <div class="conteudo-beneficios">
+	            <ul class="lista-beneficios">
+	                <li class="itens" style="font-weight: bold">Atendimento aos Clientes</li>
+	                <li class="itens">Espaço diferenciado</li>
+	        // ... Hided part ...
+
+        // Agora... É a melhor maneira de fazer isso?
+
+           * Som de suspense
+
+        // Não, é extremamente recomendado o uso do CSS para essa situation.
+
+    // No CSS <style>:
+
+        .itens: first-child {
+		    font-weight: bold;
+		}                                                //FIM DO CSS </style>
+
+        // A tradução de 'first-child' seria 'primeiro filho'.
+            // Isso significa que na class 'itens' o primeiro elemento será afetado.
+            // Para afetar o ultimo elemento da class 'itens', o code deve está assim:
+                // No CSS <style>:
+
+		        .itens: last-child {
+				    font-weight: bold;
+				}                                                //FIM DO CSS </style>
+
+			// Para afetar qualquer elemento da class 'itens', o code deve está assim:
+			    // No CSS <style>:
+
+		        .itens: nth-child(x) {
+				    font-weight: bold;
+				}                                                //FIM DO CSS </style>
+
+                    // No lugar do 'x' adicionamos um número referente a posição do elemento.
+                    // Seguindo a lista da linha 51:
+
+                        itens: nth-child(2) = Espaço diferenciado
+                        itens: nth-child(3) = Localização
+
+                    // Podemos ainda utilizar valores como 2n com o nth-child(), o que quer dizer que marcamos todos os elementos pares da lista, isto é, o segundo, quarto e sexto elemento da lista ficam em negrito. < Web Source.
+                        // Tente testa outros numeros meu pequeno gafanhoto :}
+
+
+// GRADIENTE --------------------------------------------------------------------
+
+No CSS <style>:
+
+.mapa {
+    padding:3em 0;
+--> background: linear-gradient(45deg, 0% orange, 65% blue, 80% red, 90% black);
+}
+
+FIM DO CSS </style>
+
+    // 'linear-gradient' Aplica um gradiente no background.
+        // Dentro dos () colocamos as cores que formaram o gradiente (Pode ser qualquer quantidade).
+    // Por padrão o gradiente começa do top para o fundo.
+        // Adicionando 'deg' dentro dos () podemos controlar o grau (direção) do gradiente.
+    // Definindo a pocentegem ao lado das cores, determinamos APARTIR de onde cada cor deve começar.
+
+        0% orange, 65% blue, 80% red, 90% black
+        // O laranja começa apartir do 0%
+        // Apartir do 65% inicia o azul.
+        // etc...
+
+    // Podemos usar também o 'radial-gradient' (Nesse caso, o gradiente será circular).
+        // Não usamos o 'deg', pois se trata de um circulo
+
+
+// PSEUDO-ELEMENTOS -----------------------------------------------------------------
+
+
+No CSS <style>
+
+.titulo-principal {
+    text-align: center;
+    font-size: em;
+    margin: 0 0 1em;
+    clear: left;
+}
+
+.titulo-principal:first-letter {
+--> font-weight: bold;
+}
+               FIM DO CSS </style>
+
+    // Quando queremos aplicar algum efeito apenas em 1 letra, usamos 'first-letter'.
+        // first-letter significa 'primeira letra'.
+    // NARRANDO O CODE: Na primeira letra da class 'titulo-principal', peso da fonte será Negrito(Bold).
+
+// Ao inves de aplicarmos á primeira letra, podemos aplicar semente na 1° Linha <style>:
+
+        p:first-line {
+        font-style: italic;
+        }
+                        FIM DO CSS</style>
+
+        // No ultimo exemplo, apliquei a fonte 'italic' na primeira linha do parágrafo(<p>).
+
+-------------------------------- AFTER & BEFORE ------------------------------------
+
+    // Esses dois elementos criam espaço para que o CSS atue antes ou depois de um determinado conteúdo.
+    // No CSS <style>
+        .titulo-principal:before {
+            content: "[";
+        }
+
+        .titulo-principal:after {
+            content:"]"
+        }
+                                               FIM DO CSS </style>
+
+        // No exemplo ACIMA, definimos que antes(before) do elemento, será aplica o conteúdo '['
+            // O mesmo foi feito no after(pós elemento)
+
+                // before > elemento > after
+
+
+// SELETORES AVANÇADOS -------------------------------------------------------------
+
+
+// temos o seginte code:
+
+<main>
+    <p> qualquer conteudo</p>
+
+    <section class="principal">
+        <h2 class="titulo-principal">Sobre a Barbearia Alura</h2>
+
+        <img class="utensilios" src="utensilios.jpg" alt="Utensilios de um barbeiro." />
+
+        <p>Localizada no coração da cidade.......
+
+        // ... Code oculto ...
+
+</section>
+
+// Nosso objetivo agora é aplicar uma alteração no 1° Parágrafo, porém se aplicamos o code da seguinte maneira: No CSS <style>:
+
+        main p {
+            background: red;
+        }
+
+    // Veremos que todos os paragrafos obtiveram a cor 'red'.
+        // Para evitar esse problema, usaremos os seletores avançados (são funcionalidade do CSS que permitem uma maior precisão na seleção do elemento cara de pau - Por isso o nome seletor avançado :} ).
+
+    // Com os seletores avançados do CSS,podemos selecionar os filhos diretos de <main>, para tanto, utilizaremos o sinal >, e todo os outros parágrafos serão ignorados, afinal são filhos diretos da <section> e não de <main>.
+
+            main > p {
+                background: red; 
+            }
+
+    // Mas como selecionar o primeiro parágrafo que sucede uma imagem, por exemplo? Conseguimos selecionar o primeiro filho com o seletor que acabamos de conhecer, mas neste caso estamos falando do primeiro irmão que vem depois de um elemento.
+
+        // Neste caso, usamos 'img' como elemento âncora e para o primeiro irmão usamos o sinal de "+".
+
+            img + p { 
+                balckground: blue;
+            }
+
+        // Para selecionar todos os parágrafos localizados depois de uma imagem usamos o seletor ~.
+
+            img ~ p {
+                background: yellow
+            } 
+    
+    // É importante lembrar que um seletor pode sobrescrever o outro, pois todos possuem a mesma força. Os seletores avançados nos ajudam a criar estilos mais complexos e utilizar o CSS de uma maneira incrível, com uma autonomia maior do HTML.
+
+    // No CSS podemos, inclusive, excluir itens específicos. Se quisermos excluir todos os parágrafos que não compõe missao, escreveremos:
+
+        .principal p:not(#missao) {
+            background: orange;
+        }
+
+    // A exclusão é um elemento poderoso no CSS, principalmente quando realizamos manutenção em algum código que já existe e que não devemos modificar tanto o HTML.
+
+                                 FIM DO CSS </style>
+
+
+// OPACIDADE NOS ELEMENTOS ----------------------------------------------------------
+
+
+No CSS <style>:
+
+    .imagem-beneficios {
+        width: 60%
+        opacity: 0.3;  <--   // ALtera a opacidade do elemento ( nesse exemplo foi usado o 0.3 que é o mesmo que 30% - Poderiamos utiliza diretamente o 30%, também funcionaria ).
+        transition: 400ms;
+    }
+
+// Quando queremos aplicar opacidade nas cores ( seja para o background, textos etc.. ) utilizamos o 'rgba':
+
+    .titulo-principal {
+        text-align: center;        // Texto centralizado.
+        font-size: 2em;            // Fonte aumentada em 2x (apartir da original).
+        margin: 0 0 1em;           // Separação de margem
+        clear: left;
+        color: rgb(0,0,0,0.3);     // Opacidade em 30%.
+    }                                               FIM DO CSS </style>
+
+    // Quando usamos o 'RGB', as cores são definida em (0, 0, 0).
+        // Quando usamos o RGBA além das cores temos a opacidade (0, 0, 0, 30%).
+            // O ultimo(4°) parametro é sempre a opacidade.
+
+
+// SOMBRA NOS ELEMENTOS -------------------------------------------------------------------
+
+
+No CSS <style>:
+
+.imagem-beneficios {
+    width: 60%
+    opacity: 1;
+    transition: 400ms;
+--> box-shadow: 10px 10px 5px 20px #000000;
+
+}
+
+    // Usamos o 'box-shadow' para gerar sombra no elemento.
+
+        10px 10px 5px 20px #000000;
+    //   X   Y   DESFOQUE  INTENSIDADE  COR;
+
+        // Podemos adicionar mais de uma sombra no mesmo elemento.
+
+// Outra possibilidade no CSS 3 é criar sombras internas. Seu posicionamento será a partir do centro do elemento e terá a cor vermelha.
+
+.beneficios {
+    padding: 3em 0;
+    background: #888888;
+--> box-shadow: inset 0 0 30px #FF0000;
+}
+
+// Podemos aplicar sombre em textos:
+
+
+.titulo-principal {
+    text-align: center;
+    font-size: em;
+    margin: 0 0 1em;
+    clear: left;
+--> text-shadow: 2px 2px #FF0000; 
+}
+
+    // Para o texto, usamos 'text-shadow'.
+                                                 FIM DO CSS </style>
+
+// META TAG DE VIEWPORT --------------------------------------------------------------
+
+
+// Geralmente, os celulares possuem 320px de largura de tela,alguns maiores oscilam entre 350px e 480px. Portanto se o mínimo é 940px, teremos um valor discrepante. Uma informação crucial é saber quantos pixels possui a tela do usuário.
+
+// Trabalharemos com uma nova tag <meta>, mas dessa vez com propriedade e valor name="viewport" embutidas. Queremos, ainda, saber a largura do dispositivo, e para isso usaremos a propriedade content com o valor width=device-width.
+    // A tag <meta> é adicionada no <head>.
+
+        <head>
+            <meta charset="UTF-8">
+        --> <meta name="viewport" content="width=device-width">
+
+            // ...Hided content...
+
+        // Com isso passamos a obter dados sobre os pixel(tamanho de tela) do dispositivo.
+            // Se testarmos o site agora, o navegador vai tentar adapitar a tela de acordo com o tamanho de tela do dispositivo.
+                // Porém, não muito eficiente. alguns ou todos os elemento da pagina podem está apresentando problemas em: posição, scala etc...
+
+        // No CSS <style> devemos adicionar o seguinte code:
+
+
+            @media screen and (max-width: 480px) {
+                body {
+                    background: red;
+                }
+            }
+
+            // Nesse exmplo defini que para tela de até no maximo 480px de largura, quero altera o <body> da pagina, aplicando um fundo vermelho.
+
+            // Podemos substituir o <body> por qualquer outra coisa (mesmo sendo elementos que já foram citados fora do @media screen).
+                // Pois aqui se trata de um novo comportamento, se a tela corresponder a 'max-width: 480px'

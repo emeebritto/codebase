@@ -1,0 +1,45 @@
+body {
+	background-color: #080918;
+	/*overflow: hidden;*/
+}
+
+main {
+	background-color: #080918;
+	position: relative;
+	height: 1604px;
+}
+
+.painel-mapa{
+	height: 23px;
+	max-width: 1359px;
+	background-color: black;
+}
+
+.painel {
+	background: transparent;
+	border: 2px -- purple;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	width: 1366px;
+	margin-bottom: 4px;
+	color: #0B0B0B;
+	text-align: center;
+}
+
+::-webkit-scrollbar-track {
+    background-color: black;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    background: black;
+}
+::-webkit-scrollbar-thumb {
+    background: #343434;
+}
+
+.absolute {
+	color: red;
+	background-color: red;
+}

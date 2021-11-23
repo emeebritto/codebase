@@ -1,0 +1,168 @@
+ALFO = Inicia em uma linha e fecha em outra (ambos isoladamente). <--- Isso não faz parte do HTML (ANOTAÇÃO PESSOAL)
+CSS = Elemente que faz parte do CSS.
+
+<a></a>
+
+    // Isso é uma tag de conteúdo.
+    // No meio, é adicionado um nome (Ex: <a>Pagina Inicial</a>)
+    // Além disso, é necessario ter um link (Ex: <a href="index.html">Pagina Inicial</a>)
+      // Nesse caso, fiz um link para um arquivo local.
+      // Para linkar outras paginas da web, basta substituir 'index.html' por uma URL.
+                   ---------------------------------------------------
+
+    // Quando um o conteúdo está no formato inline significa que o conteúdo da tag é do tamanho do conteúdo que está nele.
+    // já no formato block, o tamanho do conteúdo sempre será 100% do tamanho da pagina.
+
+<nav></nav>    // ALFO
+
+    // É um divisor de conteúdo, ele é semelhante ao <header>.
+    // É um local onde vai conter os elementos de navegação do site.
+            ----------------------------------------------
+
+    // Quando escrevemos em maiúsculo diretamente no HTML significa que estamos gritando(destacando) o texto referente.
+    // Se esse não é o objetivo, e mesmo assim queremos deixar o texto em maiúsculo, devemos adicionar o seguinte code no CSS.
+
+text-transform: uppercase;    // CSS
+
+    // Com isso, deixamos o texte referente em maiúsculo.
+
+font-weight: bold;    // CSS
+
+    // Deixa a fonte em negrito, sem alterar no HTML.
+
+font-size: 22px;    // CSS
+
+    // Altera o tamanho da fonte.
+    // O valor 22px pode ser alterado.
+
+text-decoration: none;    // CSS
+
+    // Remove o sublinhamento do texto (O sublinhamento é aplicado por padrão pelo navegador).
+
+margin: topo, direita, baixo, esquerda;    // CSS
+
+    // Faz um espaçamento externo.
+    // Os nomes 'topo, direita, baixo, esquerda' foram adicionados apenas para exibir a ordem.
+    // Os nomes 'topo, direita, baixo, esquerda' devem ser substituidos por n°px ( Ex: margin: 00, 00, 00, 15px; ).
+
+    // O margin: auto centraliza o elemento como a div
+       // margin: 0 auto;
+       // Pracima e PraBaixo 0.
+       // Esquerda e Direita auto (se calculando sozinha).
+
+position: static;    // CSS
+
+    // É a posição padrão de um elemento (Posição original).
+    // Caso o elemento não tenha sido alterado de posição, nada será alterado após a adição desse code.
+
+position: relative;    // CSS
+
+    // O elemento muda de posição, mas o ponto inicial se mantem o mesmo.
+    // Exemplo dentro do CSS.
+
+    position: relative;
+	top: 45px;
+	left: 23px;
+
+position: absolute;    // CSS
+
+    // Posição absoluta (em relação a pagina).
+    // Exemplo dentro do CSS.
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+<main></main>    // ALFO
+
+    // É uma tag especifica para o contéúdo principal da pagina.
+    // Semelhante ao <nav></nav> e <header></header>.
+
+
+box-sizing: border-box;    // CSS
+
+    // Facilita e corrige operções com porcentagem e px (espaçamento lateral dentro do percentual).
+
+border-color: #000000;    // CSS
+
+    // Define a cor da borda.
+
+border-width: 2px;    // CSS
+
+    // Define a espessura da borda.
+    // O valor 2px pode ser alterado conforme necessário.
+
+border-sryle: solid;    // CSS
+
+    // Defina o estilo da borda. nesse caso, o estilo é solida.
+    // Exitem outros estilos: dashed = tracejado; dotted = pontilhado.
+
+border: 2px solid #000000;    // CSS
+
+    // Tem a mesmo função dos anteriores.
+    // É mais compacto.
+    // border: tamanho estilo cor; .
+
+border-radius: 10px;    // CSS
+
+    // Deixar as bordas arredondadas.
+    // Pode definir os arredondamento individualmente ( Ex: border-radius: 10px 30px 35px 50px; ).
+
+nav a:hover {                     // CSS
+	color: #C78C19;               // Cor: Amarelo mostarda.
+	text-decoration: underline    // Ativa sublinhamento abaixo do texto.
+}
+
+    // O 'hover' é responsavel por detectar a ação do mouse em um elemento (detecta a passagem do mouse).
+    // dentro dos {} você define quais serão as novas caracteristica do elemento ( cor, fonte, tamanho etc... ).
+    // No caso acima, foi adicionado 'nav a', isso foi para indicar qual elemento queremos aplicar o efeito.
+        // O elemento que queremos esta dentro de uma <a href="+link">Nome</a> que está dentrode uma <nav></nav> (poderia ser qualquer outro lugar).
+        // FAÇA O TESTE: ao invês de indicar a localização dessa forma ACIMA, crie uma Class ou ID para o elemento, e use ela no hover ( Ex do class: .nome:hover { ), ( Ex no id: #nome:hover { ).
+
+.nome:active {
+	color: #32CD32;               // color: limegreen (Cor: Verde-limão).
+}
+
+    // O '.nome' é apenas um exemplo.
+    // O active tem uma função semelhante ao 'hover', porém ele atua quando o botão do mouse está pressionado.
+    // Quando isso acontece, todas as configurações entre {} são aplicadas.
+
+    // Para aplicar uma mudança em outros elementos usando a mesma ação do mouse, segue o code abaixo:
+
+.nome:active h2 {
+	gg
+}
+
+    // O 'h2' e '.nome' é apenas um exemplo.
+    // Aplicando isso, quando o mouse for pressionado no elemento referente ( no exemplo foi '.nome' ), o outro elemento também citado ( no exemplo foi 'h2' ), sofrerar efeitos.
+
+
+    //EXPLICANDO MELHOR (122 e 132):
+
+    .nome:active { Mouse precionado no elemento (.nome), aplica as configuração no mesmo.
+
+    .nome:active h2 { Mouse precionado no elemento (.nome), aplica as configuração em outro elemento (h2).
+
+<footer></footer>    // ALFO
+
+    // É a tag do rodapé da pagina.
+    // O conteúdo inserido nele, será apresentado no final da pagina.
+    // As funçõs é semelhante ao <header> e <nav>.
+
+
+background: #CCCCCC;    // Cor cinza.
+
+    // Adiciona cor cinza no fundo do conteúdo.
+    // Podemos adicionar uma imagem de fundo, code a seguir:
+
+background: url("bg.jpg"); 
+
+    // Adiciona uma img no fundo do conteúdo.
+    // Nesse exemplo, eu fiz um link para uma img local (bg.jpg).
+
+    // Quando usamos img pequenas, por padrão o CSS replica até preencher todos os espaços.
+
+&copy;    // Simbolo de copyright.
+
+    // Isso é um code (unicode).
+    // Esse tipo e code, é utilizado por emoji e outro caracteres especiais.

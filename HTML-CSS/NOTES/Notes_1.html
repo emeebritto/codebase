@@ -1,0 +1,90 @@
+// Como fazer para o link abrir em nova aba (tag a do HTML) ---------------------------------------------
+
+
+	// Primeiramente vamos relembrar do que se constitui uma tag de link.
+
+	<a href="https://www.google.com">Ir para o Google</a>
+
+	// Nós devemos abrir e fechar a tag, e inserir o atributo href, que vai conter a URL de destino.
+	// Além disso, adicionamos um texto que é o que o usuário lê e também fica com a marcação de estilo que o HTML tem para esta tag.
+
+	// Agora vamos ver o que precisa mudar, para quando o usuário clicar a página ser aberta em uma nova aba.
+
+	<a href="https://www.google.com" target="_blank">Ir para o Google em nova página</a>
+
+	// Para resolver este problema adicionamos o atributo target com o valor _blank.
+
+
+// Como mudar a cor do placeholder de um input com CSS ----------------------------------------------------
+
+
+	// Vamos utilizar um pseudo-seletor chamado ::placeholder, este terá como papel principal mudar qualquer regra de CSS do placeholder de um input.
+
+	// Veja um exemplo prático:
+
+	<input type="text" placeholder="Algum texto">
+
+	// Este será o nosso HTML, agora vamos ao CSS <style>:
+
+	input::placeholder {
+	  color: red;
+	}                                             </style>
+
+	// Agora a cor do placeholder do input será vermelha, veja que a cor do texto digitado não muda, isso é alterado via regra no próprio input.
+
+	// Você pode seguir a mesma lógica para alterar o placeholder de um textarea.
+
+	// Veja o código de exemplo <style>:
+
+	textarea::placeholder {
+	  color: blue;
+	}                           </style>
+
+	// Agora a cor do placeholder do seu elemento de textarea será azul.
+
+	// Lembrando que o placeholder é a dica que os desenvolvedores inserem, para guiar o usuário em como ele deve preencher o input, que dados são necessários para o mesmo.
+
+
+// Como remover o espaço entre elementos inline ou inline-block -----------------------------------
+
+
+	// Primeiramente vamos simular um exemplo com HTML, para começar a desenvolver o problema
+
+	// Veja o código:
+
+	<div class="container">
+	  <span>Teste</span>
+	  <span>Teste 2</span>
+	</div>
+
+	// E este será o nosso CSS <style>:
+
+	span {
+	  background-color: red
+	}
+	                           </style>
+
+	// Se você criou o exemplo no seu PC, vai ver que há um espaço entre os dois spans, desta maneira:
+
+	    * Há uma palavra (Teste), na mesma linha inicia a outra (Teste 2). individualmente elas possuem um background 'red'. Existe um espaça entre os background.
+
+	// Para retirar este espaço entre os dois elementos inline podemos fazer o seguinte:
+
+		Remover a font-size do elemento pai;
+
+		Adicionar uma font-size aos elementos filhos;
+
+	// Veja o código <style>:
+
+	.container {
+	  font-size: 0;
+	}
+
+	span {
+	  font-size: 12px;
+	  background-color: red
+	}                
+                      </style>
+
+	// Desta maneira o espaço é extinguido e resolvemos o problema.
+    // Esta solução é a que vai funcionar com navegadores mais antigos também.

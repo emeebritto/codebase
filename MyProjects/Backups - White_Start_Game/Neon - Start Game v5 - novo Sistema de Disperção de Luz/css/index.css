@@ -1,0 +1,108 @@
+:root {
+  --whiteColor: 255 255 255;
+  --greenColor: 0 255 15;
+  --redColor: 255 0 0;
+}
+
+body {
+	background-color: #080918;
+	/*overflow: hidden;*/
+}
+
+main {
+	background-color: #080918;
+	position: relative;
+	height: 1604px;
+}
+
+.painel-mapa{
+	height: 23px;
+	max-width: 1359px;
+	background-color: black;
+}
+
+.painel {
+	background: transparent;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	width: 1366px;
+	margin-bottom: 4px;
+	color: #0B0B0B;
+	text-align: center;
+}
+
+::-webkit-scrollbar-track {
+    background-color: black;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    background: black;
+}
+::-webkit-scrollbar-thumb {
+    background: #343434;
+}
+
+
+.aparencyPersoNPC {
+	background-color: rgb(var(--redColor) / 100%) !important;
+	box-shadow: 5px 5px 30px rgb(var(--redColor) / 100%) !important;
+}
+
+.shineNPC_WASD_1 {
+	background-color: rgb(var(--redColor) / 15%) !important;
+	box-shadow: 0px 0px 30px rgb(var(--redColor) / 20%) !important;	
+}
+
+.shineNPC_WDWASADS_1_1 {
+	background-color: rgb(var(--redColor) / 9%) !important;
+	box-shadow: 0px 0px 30px rgb(var(--redColor) / 20%) !important;
+}
+
+.shineNPC_WASD_2 {
+	background-color: rgb(var(--redColor) / 6%) !important;
+	box-shadow: 5px 5px 30px rgb(var(--redColor) / 20%) !important;	
+}
+
+.shineNPC_WDWASADS_2_1 {
+	background-color: rgb(var(--redColor) / 4%) !important;
+	box-shadow: 5px 5px 30px rgb(var(--redColor) / 20%) !important;		
+}
+
+
+
+
+
+.aparencyPersoMain {
+	background-color: rgb(var(--whiteColor) / 100%) !important;
+	box-shadow: 5px 5px 30px rgb(var(--whiteColor) / 100%) !important;
+}
+
+.shineSide_WASD_1 {
+	background-color: rgb(var(--whiteColor) / 15%) !important;
+	box-shadow: 0px 0px 30px rgb(var(--whiteColor) / 20%) !important;	
+}
+
+.shineSide_WDWASADS_1_1 {
+	background-color: rgb(var(--whiteColor) / 9%) !important;
+	box-shadow: 0px 0px 30px rgb(var(--whiteColor) / 20%) !important;
+}
+
+.shineSide_WASD_2 {
+	background-color: rgb(var(--whiteColor) / 6%) !important;
+	box-shadow: 5px 5px 30px rgb(var(--whiteColor) / 20%) !important;	
+}
+
+.shineSide_WDWASADS_2_1 {
+	background-color: rgb(var(--whiteColor) / 4%) !important;
+	box-shadow: 5px 5px 30px rgb(var(--whiteColor) / 20%) !important;		
+}
+
+
+
+
+.specialColor {
+	background-color: green !important;
+	opacity: 100%;
+}

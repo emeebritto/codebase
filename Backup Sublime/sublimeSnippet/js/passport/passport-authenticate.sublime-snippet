@@ -1,0 +1,25 @@
+<snippet>
+	<content><![CDATA[
+passport.authenticate('local', { session: false }, (error, account, infor) => {
+    
+    if (error && error.name === 'InvalidArgumentError') {
+        return res.status(401).json({ error: error.msg });
+    }
+
+    if (error) {
+      return res.status(500).json({ error: error.msg });
+    }
+
+    if (!account) {
+      return res.status(401).json();
+    }
+
+    req.account = account;
+    return next();
+})(req, res, next);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>passport.authenticate</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js || source.jsx</scope>
+</snippet>

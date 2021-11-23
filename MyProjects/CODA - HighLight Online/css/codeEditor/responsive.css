@@ -1,0 +1,151 @@
+@media screen and (max-width: 1117px) {
+	.nav_float{
+		flex-direction: row;
+		height: 70px;
+		width: 440px;
+		top: 86%;
+		left: 16%;
+    }
+
+    .box_titleSection {
+		top: -69%;
+		left: 0%;
+	}
+
+	.box__search {
+		top: -150%;
+		left: 0%;
+		width: 45vw;
+	}
+
+	.box_inforAccount {
+		top: -610%;
+		left: 0%;
+	}
+
+    .box_select_SignUp_SignIn{
+    	top: -180%;
+    	left: 0%;
+    }
+}
+
+@media screen and (max-width: 1020px) {
+	.container{
+		flex-direction: column;
+	}
+
+	.codePreview {
+		width: 98vw;
+		justify-content: space-around;
+	}
+
+	.codePreview__button__viewHightLight{
+		margin-bottom: 14px;
+	}
+
+	.container__configs_preview {
+		justify-content: space-around;
+		width: 96vw;
+		margin-bottom: 110px;
+	}
+
+	.configs_preview {
+		flex-direction: row;
+		justify-content: space-between;
+		width: 556px;
+	}
+
+	.myProject{
+		margin-right: 20px;
+	}
+
+	.nav_float{
+		left: 28%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+	.nav_float{
+		left: 23%;
+    }
+
+	.box__search {
+		width: 48.5vw;
+	}
+}
+
+@media screen and (max-width: 730px) {
+	.nav_float{
+		left: 21%;
+    }
+
+	.box__search {
+		width: 55.5vw;
+	}
+}
+
+@media screen and (max-width: 615px) {
+	.nav_float{
+		left: 16%;
+    }
+
+	.box__search {
+		width: 65.5vw;
+	}
+
+	.configs_preview {
+		flex-direction: column;
+		width: 556px;
+	}
+
+	.myProject__name {
+        width: 95%;
+    }
+
+    .myProject__description {
+		width: 97%;
+	}
+
+    .personalization__selectorLanguagem{
+    	width: 99%;
+    }
+
+    .personalization__buttonSave {
+		background-position: 139% 0%;
+	}
+
+	.text_export {
+		margin-left: 26%;
+	}
+}
+
+@media screen and (max-width: 590px) {
+	.nav_float{
+		left: 13%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+	.nav_float{
+		left: 5%;
+    }
+	.box__search {
+		width: 82.5vw;
+	}
+
+	.text_export {
+		margin-left: 12%;
+	}
+
+	.configs_preview {
+		flex-direction: column;
+		width: 390px;
+	}
+
+	.container__configs_preview {
+		justify-content: space-around;
+		width: 97vw;
+		margin-left: 8px;
+		margin-right: 20px;
+	}
+}

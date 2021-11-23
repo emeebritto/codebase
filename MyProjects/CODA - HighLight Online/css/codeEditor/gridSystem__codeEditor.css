@@ -1,0 +1,30 @@
+.container {
+	position: relative;
+	display: flex;
+}
+
+.codePreview {
+	position: relative;
+	display: flex;
+	justify-content: flex-end;
+	width: 190%;
+}
+
+.codePreview__button__viewHightLight{
+	display: flex;
+	flex-direction: column;
+	width: 690px;
+	margin-bottom: 108px;
+}
+
+.container__configs_preview {
+	display: flex;
+	width: 300px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.configs_preview {
+	display: flex;
+	width: 283px;
+}

@@ -1,0 +1,235 @@
+.view__semiFullScreen {
+	position: absolute;
+    background-color: rgb(0 0 0 / 75%);
+    top: 0%;
+	width: 99.6vw;
+	height: auto;
+}
+
+/*---------------------------------------------------------------------*/
+
+.hljs {
+    max-width: 45.8em;
+    margin-top: 18px;
+    margin-left: 26px;
+}
+
+#icon_closeFullView {
+	position: fixed;
+	top: 0%;
+	left: 0.5%;
+	width: 60px;
+}
+
+#icon_closeFullView:hover {
+	cursor: pointer;
+}
+
+.painel__code {
+	position: relative;
+    background-color: #000E1E;
+    box-shadow: 5px 5px 30px black;
+	width: 65%;
+	top: 13%;
+	left: 5%;
+	border-radius: 9px;
+	min-height: 33.5em;
+	margin-top: 55px;
+	margin-bottom: 7.75%;
+	transition: 2s;
+}
+
+.box__buttons__decoration_fullView {
+	display: flex;
+	align-items: center;
+    margin: 1% 0 1.9% 0%;
+	background-color: transparent;
+	width: 100%;
+	height: 11%;
+}
+
+.buttons__decoration_fullview {
+	border-radius: 100%;
+	margin-top: 1%;
+	margin-left: 2%;
+	width: 17px;
+	height: 17px;
+}
+
+.button__decoration__red {
+	background-color: #F54646;
+}
+
+.button__decoration__yellow {
+	background-color: #F1D235;
+	margin-left: 1%;
+}
+
+.button__decoration__green {
+	background-color: #49FB46;
+	margin-left: 1%;
+}
+
+.campo__code {
+	position: relative;
+	outline:none;
+	border: none;
+	background-color: transparent;
+	width: 96%;
+	height: 80%;
+	font-size: 1.1em;
+	margin-top: 6px;
+}
+
+/*------------------------------------------------------------------*/
+
+.box__info_feed {
+	background-color: #2C3E50;
+	overflow: scroll;
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	height: 95vh;
+	width: 354px;
+	top: 2%;
+	left: 73%;
+	border-radius: 10px;
+}
+
+.box__info_feed::-webkit-scrollbar-track {
+    background-color: black;
+}
+.box__info_feed::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    background: black;
+}
+.box__info_feed::-webkit-scrollbar-thumb {
+    background: #343434;
+}
+
+
+/*-------------------------------------------------------*/
+
+.inforUser {
+	display: flex;
+	align-items: center;
+	background-color: #212F3D;
+	height: 60px;
+}
+
+#inforUser__img {
+	border-radius: 12px;
+	margin-left: 10px;
+	margin-right: 14px;
+	width: 44px;
+	height: 44px;
+}
+
+.box__name_time {
+	display: flex;
+	flex-direction: column;
+}
+
+#inforUser__name{
+	color: white;
+	margin-bottom: 5px;
+}
+
+#inforUser__time{
+	font-size: 0.8em;
+	color: gray;
+}
+
+/*----------------------------------------------------------*/
+
+.commit {
+	background-color: #273746;
+	height: auto;
+	color: white;
+    padding: 10px 10px 15px 10px;
+}
+
+/*-----------------------------------------------------------*/
+
+.dateFeedbacks {
+	display: flex;
+	align-items: center;
+	height: 40px;
+	background-color: #273746;
+}
+
+.dateFeedbacks__icons {
+	margin-left: 15px;
+}
+
+.dateFeedbacks__icons:hover {
+	cursor: pointer;
+}
+
+.dateFeedbacks_nums {
+	color: white;
+	margin-left: 8px;
+}
+
+#dateFeedbacks_iconBookmark {
+	margin-left: 61%;
+	width: 28px;
+}
+
+/*--------------------------------------------------------------*/
+
+.section__allCommits {
+	display: flex;
+	flex-direction: column;
+	background-color: #566573;
+	height: 67vh;
+}
+
+/*---------------------------------------------------------*/
+
+.section__sendCommit {
+	position: relative;
+	display: flex;
+	align-items: center;
+	height: 6vh;
+	width: 350px;
+	margin: 5px 5px 5px 5px;
+}
+
+#imgUser_sendCommit {
+	border-radius: 16px;
+	width: 40px;
+	height: 40px;
+	margin-right: 5px;
+}
+
+#input_sendCommit {
+	border: none;
+	outline: none;
+	height: 30px;
+	width: 73%;
+	background-color: #566573;
+	color: white;
+	border-radius: 10px;
+	margin-right: 8px;
+	padding: 0px 5px;
+}
+
+#tooltip {
+    position: absolute;
+    top: -27%;
+    left: 25px;
+    min-width: auto;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #212F3D;
+    color: White;
+}
+
+#alertNoLogged__sendCommit{
+	color: white;
+	margin-left: 52px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}

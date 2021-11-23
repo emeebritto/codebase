@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-br" style="--borderHover: #5E02FF;">
+	<head>
+		<meta charset="utf-8">
+		<title>CODA - HightLight Editor</title>
+		<meta name="viewport" content="width=device-width">
+
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Abel&family=Inconsolata:wght@300;400&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/header.css">
+		<link rel="stylesheet" href="css/nav_float.css">
+		<link rel="stylesheet" href="css/boxInforAccount.css">
+		<link rel="stylesheet" href="css/darcula.css">		
+		<link rel="stylesheet" href="css/codeEditor/gridSystem__codeEditor.css">
+		<link rel="stylesheet" href="css/codeEditor/preview.css">
+		<link rel="stylesheet" href="css/codeEditor/configs_preview.css">
+		<link rel="stylesheet" href="css/codeEditor/responsive.css">
+		<link rel="stylesheet" href="css/codeEditor/parametrosTemaDarcula.css">
+		<link rel="stylesheet" href="css/codeEditor/boxAlertNoLogged.css">
+		<link rel="icon" href="assets/icon.png">
+	</head>
+
+<!------------------------------------------------------ topo da pagina inicial -->
+
+	<body>
+
+		<header class="top__pag">
+			<a href="index.html" id="tagAheader">
+				<img class="top__logo__img" src="assets/img/logo_coda.png">
+			</a>
+			<input class="top__search" type="search" name="search" placeholder="Search">
+
+			<section class="infoField">
+				<img id="infoField__icon_notification" src="assets/icons/notifications_white_24dp.svg">
+				<img id="infoField__icon_info" src="assets/icons/info_white_24dp.svg">
+			</section>
+		</header>
+
+<!------------------------------------------------------ campo do code -->
+
+		<section class="container">
+
+			<main class="codePreview">
+				<section class="codePreview__button__viewHightLight">
+					<section class="painel__border" onmouseleave="highlightActive()" id="code">
+						<div class="painel__code" onmouseenter="activeAlert()">
+							<div class="box__buttons__decoration">
+								<div class="button__decoration__red buttons__decoration"></div>
+								<div class="button__decoration__yellow buttons__decoration"></div>
+								<div class="button__decoration__green buttons__decoration"></div>
+							</div>
+							<div class="wrapper_code">
+							    <code class="hljs" contenteditable="true" aria-label="editor">console.log("Type here...")</code>	
+							</div>
+						</div>
+					</section>
+					<button class="button__viewHightLight button__viewHightLight__disable">remove the mouse from the field to apply the HighLight</button>					
+				</section>
+			</main>
+
+<!------------------------------------------------------ alert - successful Upload -->
+
+			<span class="alert__successfulUpload" style="display: none;">
+				<h1 class="text__successfulUpload">Successful upload</h1>
+			</span>
+
+<!------------------------------------------------------ configurações do projeto -->
+
+
+            <section class="container__configs_preview">
+				<section class="configs_preview">
+					<section class="myProject">
+						<h1 class="myProject__titleYourProject">MY PROJECT</h1>
+						<input class="myProject__name" type="text" name="nameProjeto" placeholder="Name (export)" value="">
+						<textarea class="myProject__description" cols="30" rows="4" type="search" name="DescricaoProjeto" style="resize: none" placeholder="Comment..."></textarea>
+					</section>
+					<section class="personalization">
+						<h1 class="personalization__title">PERSONALIZATION</h1>
+						<select class="personalization__selectorLanguagem">
+						    <option id="select_op">JavaScript</option>
+						    <option id="select_op">HTML</option>
+						    <option id="select_op">CSS</option>
+						    <option id="select_op">SCSS</option>
+						    <option id="select_op">Python</option>
+						    <option id="select_op">C#</option>
+						    <option id="select_op">Ruby</option>
+						    <option id="select_op">C++</option>
+						    <option id="select_op">Lua</option>
+						    <option id="select_op">Java</option>
+						    <option id="select_op">C</option>
+						    <option id="select_op">TypeScript</option>
+						    <option id="select_op">R</option>
+						    <option id="select_op">PHP</option>
+						    <option id="select_op">Go</option>
+						    <option id="select_op">Swift</option>
+						</select>
+						<input class="personalization__selectorColor" value="#3A1AB2" type="color">
+						<section class="RGBmode">
+							<img class="modoRGB__icon" src="assets/icons/toggle_off_white_24dp.svg">
+							<p class="modoRGB__text">RGB Mode</p>
+						</section>
+						<section class="privacyMode">
+							<div class="block_checkbox">
+							</div>
+							<p class="modoRGB__text">Keep Private</p>
+						</section>
+						<section class="saveOptions">
+							<section class="box__button_Export">
+								<p class="text_export">Export</p>
+								<img class="button_Export" src="assets/icons/file_download_white_24dp.svg" >
+							</section>
+							<button class="personalization__buttonSave">Save and Publish</button>
+					    </section>
+					</section>
+				</section>            	
+            </section>
+
+
+            <section class="background__box_alert__NoLogged" id="box_alert__NoLogged" style="display: none;">
+				<section class="box_alert__NoLogged">
+					<img class="iconClose__boxAlert__NoLogged" src="assets/icons/add_black_24dp.svg">
+					<section class="titleAlert__Options">
+					    <p class="title_alert__NoLogged">You must be logged in to save or Publish on CODA</p>
+
+					    <section class="box__options">
+					    	<button class="SignUp_SignIn__box__options" id="button_signIn" onclick="redirectlogin()">Sign in</button>
+					    	<button class="SignUp_SignIn__box__options" id="button_signUp" onclick="redirectSignUp()">Sign up</button>
+					    </section>
+
+					</section>
+					<img class="img_alert__NoLogged" src="assets/img/catNoLogin.png">
+				</section>            	
+            </section>
+
+
+<!------------------------------------------------------ menu de navegação (float) -->
+
+			<nav class="nav_float">
+
+				<section id="nav_link__search">
+					<section class="nav_buttons">
+						<div class="block_icon">
+							<img class="block_icon_iconPosition" src="assets/icons/search_white_24dp.svg" type="svg">
+						</div>
+						<div class="box_titleSection">
+						    <p id="box_titleSection_search" class="nav_titleSection">Search</p>
+						</div>
+						<div class="box__search" style="display: none;">
+							<input class="input_search" type="text" name="Search" placeholder="Search">
+							<img class="img_search" src="assets/icons/search_white_24dp.svg">
+						</div>
+					</section>
+			    </section>
+
+				<section id="nav_link__account" style="display: none;">
+					<section class="nav_buttons">
+						<div class="block_imgUser">
+							<img class="imgUser" src="assets/img/img-perfil.png">
+						</div>
+						<div class="box_titleSection">
+						    <p id="box_titleSection_account" class="nav_titleSection">Account</p>
+						</div>
+						<div class="box_inforAccount" style="display: none;">
+							<img class="box_inforAccount_imgAccount" src="assets/img/img-perfil.png">
+							<p class="box_inforAccount_nameUser">Emerson_Britto</p>
+							<p class="box_inforAccount_idUser">ID: 98657473</p>
+							<section class="buttons__confi_logOut">
+								<div class="box_button__config"></div>
+							    <button class="box_inforAccount_logOut">Log out</button>
+							</section>
+						</div>
+					</section>
+				</section>
+
+                <section id="nav_link__SignUpIn">
+					<section class="nav_buttons">
+						<div class="block_icon__login">
+							<img class="block_icon_iconPosition" src="assets/icons/login_white_24dp.svg">
+						</div>
+						<div class="box_titleSection">
+						    <p id="box_titleSection_SignUpIn" class="nav_titleSection">Sign Up/In</p>
+						</div>
+						<div class="box_select_SignUp_SignIn" style="display: none;">
+							<button class="SignUp_SignIn__button" id="button_signIn" onclick="redirectlogin()">Sign in</button>
+							<button class="SignUp_SignIn__button" id="button_signUp" onclick="redirectSignUp()">Sign up</button>
+						</div>
+					</section>
+                </section>
+
+
+				<a id="nav_link__codeEitor" href="index.html">
+					<section class="nav_buttons">
+						<div id="block_icon__codeEditor" class="block_icon__active">
+							<img class="block_icon_iconPosition" src="assets/icons/code_white_24dp.svg" type="svg">
+						</div>
+						<div id="box_titleSection_CodeEditor" class="box_titleSection">
+						    <p class="nav_titleSection">Code Editor</p>							
+						</div>
+
+					</section>					
+				</a>
+
+				<a id="nav_link__myPost" href="myPosts.html">
+					<section class="nav_buttons">
+						<div class="block_icon">
+							<img class="block_icon_iconPosition" src="assets/icons/library_books_white_24dp.svg" type="svg">
+						</div>
+						<div class="box_titleSection">
+						    <p id="box_titleSection_MyPost" class="nav_titleSection">My Posts</p>
+						</div>
+					</section>
+			    </a>
+
+				<a id="nav_link__bookmarks" href="bookmarks.html">
+					<section class="nav_buttons">
+						<div class="block_icon">
+							<img class="block_icon_iconPosition" src="assets/icons/bookmarks_white_24dp.svg" type="svg">
+						</div>
+						<div class="box_titleSection">
+						    <p id="box_titleSection_bookmarks" class="nav_titleSection">Bookmarks</p>
+						</div>
+					</section>
+			    </a>
+
+				<a id="nav_link__community" href="community.html">
+					<section class="nav_buttons">
+						<div class="block_icon">
+							<img class="block_icon_iconPosition" src="assets/icons/forum_white_24dp.svg" type="svg">
+						</div>
+						<div class="box_titleSection">
+						    <p id="box_titleSection_community" class="nav_titleSection">Community</p>
+						</div>
+					</section>
+			    </a>
+			</nav>
+		</section>
+
+<!------------------------------------------------------ hearder flutuante -->
+
+		<header class="top__pagFloat inSroll command__shortcut" style="transition: 600ms; display: none;">
+			<a href="index.html" id="tagAheaderFloat">
+				<img class="top__logo__imgFloat" src="assets/img/logo_coda.png">
+			</a>
+			<input class="top__searchFloat" type="search" name="search" placeholder="Search in 'Community'">
+
+			<section class="campo__perfilFloat">
+				<img class="campo__perfil__img" src="assets/img/img-perfil.png">
+				<p class="campo__perfil__name">Emerson_Britto</p>
+			</section>
+		</header>
+
+        <script src="js/minified/gsap.min.js"></script>
+        <script src="js/codeEditor/boxAlertNoLogged.js"></script>
+        <script src="js/loginChecker.js"></script>
+        <script src="js/codeEditor/initialParameters.js"></script>
+        <script src="js/highlight.js"></script>
+        <script src="js/RGBmode.js"></script>
+        <script src="js/command__shortcut.js"></script>
+        <script src="js/codeEditor/setProject.js"></script>
+        <script src="js/codeEditor/privacyMode.js"></script>
+		<script src="js/codeEditor/index.js"></script>
+	    <script src="js/dom-to-image.min.js"></script>
+	    <script src="js/FileSaver.js"></script>
+	    <script src="js/contentNPC.js"></script>
+	    <script src="js/openSearch.js"></script>
+	    <script src="js/redirectSign.js"></script>
+	    <script src="js/boxInforAccount.js"></script>
+	    <script src="js/feedBackCounterSystem.js"></script>
+	</body>
+</html>

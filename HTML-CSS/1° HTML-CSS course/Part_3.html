@@ -1,0 +1,337 @@
+ALFO = Inicia em uma linha e fecha em outra (ambos isoladamente). <--- Isso não faz parte do HTML (ANOTAÇÃO PESSOAL)
+CSS = Elemente que faz parte do CSS.
+
+
+// ELEMENTOS DO FORMULÁRIO ---------------------------------------------------------------------
+
+
+<form></form>    // ALFO
+
+    // É uma tag para formulário.
+    // Semelhante ao <header>, <main> e <footer>.
+    // Para termos um fermulário completo, usamos as tags <label></label> e <input type="" name="">.
+
+<label>nome_para_o_campo</label>
+
+    // Acompanha o formulário, também tem a funcionalidade de informar para o usuario, oque deve ser preenchido no campo referente.
+    // Exemplo na linha 34.
+
+
+<input type="text">
+
+    // Permite que o usuario digite informações.
+    // O <input> e o <label> formam um par. sendo assim, podemos deixar ele ainda mais conectados:
+    	// Acrescentamos o id no input: <input type="text" id="nomesobrenome">.
+    	// Adicionamos o for no label ( Avisando que aquilo é uma etiqueta para um input ): <label for="nomesobrenome"></label>
+    	    // Os nomes do id e for, devem ser iguais.
+    	         // Assim o vinculo entre o titulo (label) e o campo de preenchimento está valido.
+
+<input type="submit">
+
+    // Criar um botão de envio do formulário.
+    // Você pode alterar o nome que exibido no botão de envio, por meio do 'value':
+
+    <input type="submit" value="Nome Diferente">
+
+    // Se você definir o 'value' no <input type="text">, quando a pagina carregar o campo vai está preenchido com o nome que foi definido em 'value'.
+
+// EXEMPLO DO CODE:    // Formulário para envio de e-mail.
+
+<form>
+	<label for="nomesobrenome">E-mail</label>
+	<input type="text" id="nomesobrenome">
+
+	<input type="submit" value="Enviar">
+</form>
+
+// REVISÃO RAPIDA: 'padding' altera o espaçamento interno do elememto.
+
+
+
+// CAIXA PARA MENSAGEMS ------------------------------------------------------------
+
+
+
+<textarea></textarea>
+
+    // Cria uma caixa de mensagem, onde o usuario pode digitar qualquer coisa.
+    // O usuario consegue ajustar o tamanho do campo.
+
+<textarea cols="30" rows="10"></textarea>
+
+    // Com o <textarea> dessa forma, é possivel defnir qual será o tamanho da caixa ao carregar o pagina.
+    // cols = colunas.
+    // rows = linhas.
+
+
+// CAIXA DE MARCAÇÃO SELECIONAVEL ---------------------------------------------------
+
+
+<input type="radio" value="email">
+
+    // Adiciona caixa de marcação (semelhante ao checklist).
+    // O nome escrito dentro do 'value', não é exibido.
+        // Então podemos utilizar um <label>.
+            // O processo do 'id' e 'for', explicado anteriormente, ainda é aplicável.
+
+    // Quando criamos varias caixa de marcação, percebemos que conseguimos marcar todas elas, se caso não seja o objetivo, basta acrescentar name="contato" .
+
+    <input type="radio" name="contato" value="email">
+
+    // Isso torna eles pertencentes a um unico grupo.
+
+
+// CHECKBOX -------------------------------------------------------------------------
+
+
+<label><input type="checkbox">Gostaria de receber nossas novidades por e-mail?</label>
+
+    // É uma versão comprimida do <label> + <input>.
+    	// Como os dois formam um par, esse code também entraga o mesmo resultado.
+    // Uma versão não comprimida ficaria assim:
+
+    <label for="checkmail">Gostaria de receber nossas novidades por e-mail?</label>
+    <input type="checkbox" id="checkmail">
+
+
+// Tudo que foi mostrado se aplica no HTML. porém, se observamos, visualmente ainda não está bem posicionado, isso porque essa parte do polimento é feito no CSS.
+
+
+// APLICANDO CSS EM MAIS DE UM ELEMENTO -----------------------------------------
+
+
+    // a melhor abordagem quando temos uma configuração de CSS aplicada para um item e queremos replicar ela para um item parecido:
+
+        // Usar os seletores dos itens separados por vírgula.
+            // Essa é uma forma simples de fazermos a mesma configuração de CSS funcionar para os dois itens, sendo eles seletores dos elementos, de ids ou de classes.
+
+        // Criar uma classe.
+            // Quando temos um estilo que pode ser repetido, uma excelente estratégia é extrair isso para uma classe e usar a classe para aplicar esses estilos nos nossos elementos.
+
+
+// HIERARQUIA NO CSS ------------------------------------------------------------
+
+
+// Se usarmos tags, id e class para o mesmo elemento, deixando cada um deles com uma cor diferente, o CSS vai usar o sistema de Hierarquia:
+
+    // Tags : 1
+    // Class : 10
+    // ID : 100
+    // Inline no HTML : 1000 ( Esse é aplicado diretamente no HTML, Sendo o mais forte. )
+
+    // Seguindo a tabela de forças ACIMA, temos:
+
+    <p class="textcor" id="textcor">Olá Mundo</p>
+
+    .textcor {
+        color: red;
+    }
+
+    #textcor {
+        color: pink;
+    }
+
+    // Seguindo a tabela (linha 91 a 94), concluimos que a cor final do texto será 'pink'.
+
+    // Isso também se aplica por soma:
+
+    <p class="textcor" id="textcor">Olá Mundo</p>
+
+    p.textcor {        // Somando as potencias: 11 de força.
+        color: red;
+    }
+
+    #textcor {         // 100 de força.
+        color: pink;
+    }
+
+    // exemplo inline, ABAIXO:
+
+    <p class="textcor" id="textcor" style="color: yellow">Olá Mundo</p>
+                                      // Inline no HTML : 1000
+
+    // Comcluimos que a cor final do texto será 'yellow'.
+    // Sem o CSS inline (HTML), A cor seria 'pink'.
+    // Sem o CSS inline (HTML) e o id, A cor seria 'red'.
+
+
+// SELETOR DE OPÇÕES -------------------------------------------------------------
+
+
+<select>
+	<option>Nome da opção</option>
+	<option>Nome da opção</option>
+	<option>Nome da opção</option>
+</select>
+
+    // Com essa estrutura, criamos um seletor onde o usuario ao clicar tem acessa a varias opções que ele pode selecionar.
+
+
+// INPUTS PARA CELULARES ---------------------------------------------------------
+
+
+    // Podemos subtituir o <input type="text" id="nomesobrenome"> por <input> que facilitam a vida dos usuarios que acessam o site pelo celular.
+         // Esses <input> alteram o tipo de teclado que o celular vai mostrar durante a digitação no campo.
+         // Segue o link do site (lá contem todos os 'input'): http://mobileinputtypes.com
+
+// ALGUNS EXEMPLOS:
+
+    // <input type="email"> (altera o teclado, adicionando um @, em alguns casos até o '.com' é adicionado).
+    // <input type="tel"> (altera o teclado para númerico, facilitando a  digitação de número de telefone).
+    // <input type="password"> (não altera exatamente o teclado, ele censura o conteúdo digitado usando '*'. Isso é utilizado no campo de senha).
+
+    // OBS: Vantagem de usarmos os inputs corretamente: Se o usuario adicionar um numero de telefone no campo do e-mail, um alerta será disparado.
+
+
+// DADOS IMPORTANTES NOS INPUTS ( REQUIRED, PLACEHOLDER, CHECKED) ---------------
+
+
+    // Para deixarmos um campo obrigatirio, adicionamos um 'required' no <input>.
+
+<input type="email" id="email" class="input-padrao" required>
+
+    // Dessa forma, o formulario não pode ser enviado, se o campo não estiver preenchido.
+    // Visualmente, nada é alterado.
+        // O pop-up será disparado para alertar o usuario, caso ele tente enviar o formulario.
+
+
+    // Para adicionarmos um preview de conteúdo dentro do campo (Ele será exibido até o usuario digitar algo), adicionamos um 'placeholder' no <input>.
+
+<input type="tel" id="telefone" class="input-padrao" required placeholder="(XX) XXXXX-XXXX">
+
+    // Isso auxilia o usuario, Informando um exemplo de preenchimento.
+        // No exemplo da linha 199, usamos '(XX) XXXXX-XXXX', ele será exibido até o usuario digitar o seu número de telefone.
+
+
+    // Anteriormente, citamos como criar um checklist no formulario.
+        // Quando a pagina era carregada, os campo não estavam marcados por padrão.
+        // Se quisermos deixar a marcação da caixa ativa por padrão, usamos o 'checked' no <input>.
+
+<label class="checkbox"><input type="checkbox" checked>Gostaria de receber nossas novidades por email?</label>
+
+    // Quando a pagina carregar o campo 'Gostaria de receber nossas novidades por email?' estará marcado.
+        // Nada impede o usuario desativar depois (é mais uma função para facilitar).
+
+
+// SEMÂNTICA + ORGANIZAÇÃO -------------------------------------------------------
+
+
+<fieldset></fieldset>
+
+    // Semelhante a uma <div>.
+    // Tem a função de agrupar elementos relacionados mesmo assunto.
+        // Ex: Os dados de um cartão de credito.
+        // Ex: Dados de um formulário.
+
+<legend></legend>
+
+    // É usado dentro de um <fieldset>.
+    // Tem a uma semelhante ao <p>.
+
+----------------------------------------------------------------------------------
+
+    width:40%;                        // Largura
+    padding: 15px 0;                  // Espaçamento interno
+    background: orange;               // Cor de fundo
+    color: white;                     // Cor do text (font)
+    font-weight: bold;                // Estilo d fonte (negrito, itálico etc..)
+    font-size: 18px;                  // Tamanho da fonte
+    border: none;                     // Borda
+    border-radius: 5px;               // Curva da Borda
+    transition: 1s all;               // Transição (1s = 1 segundo, all = aplicar a tudo)
+    cursor: pointer;                  // Tipo do curso do mouse.
+
+
+        // Na 'transition', podemos trocar o parámetro 'all' por qualquer outra caracteristica que desajamos que a transição seja aplicada.
+        // Exemplo:
+
+        .enviar {
+		    width:40%;
+		    padding: 15px 0;
+		    background: orange;
+		    color: white;
+		--> transition: 1s background;    // Transição de 1s para background (quando o mouse estiver encima)
+		    cursor: pointer;
+		}
+
+		.enviar:hover {
+		--> background: darkorange;
+		    transform: scale(1.2);
+		}
+
+transform: scale();
+
+    // Altera a escala do elemento.
+
+transform: rotation(0deg);
+
+    // Altera a rotação do elemento.
+    //Exemplo:
+
+    transform: rotation(50deg);
+
+        // O elemento sofrera uma rotação de 50 graus.
+            // Não é a temperatura :}
+        // Se aplicarmos isso no 'hover', quando o mouse estiver encima do elemento, ele terá uma mudança de estado. (É possível executar essa etapa tendo como base os exemplos/explicações anteriores).
+
+    // Se você adicionar varias funções em sequencia, usando o 'transform', apenas o ultimo será executado.
+        // Para somar todos (executar todos), devemos coloca-los da seguinte forma.
+
+        transform: rotate(70deg) scale(1.2);
+
+        // Se o 'transform' tivesse sido aplicado assim:
+
+        transform: rotate(70deg);
+        transform: scale(1.2);
+
+        // Apenas o 'scale' seria executado.
+
+<table></table>
+
+    // É utilizado para criar tabelas no HTML.
+    // Dentro do <table></table> adiconamos <tr></tr> (Para criar as linha) e <td></td> (Para criar as colunas).
+    //Exemplo: 
+
+    <table>
+	    <thead>
+	        <tr>
+	            <th>Dia</th>
+	            <th>Horário</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	        <tr>
+	            <td>Segunda</td>
+	            <td>8h ~ 20h</td>
+	        </tr>
+	        <tr>
+	            <td>Quarta</td>
+	            <td>8h ~ 20h</td>
+	        </tr>
+	        <tr>
+	            <td>Sexta</td>
+	            <td>8h ~ 20h</td>
+	        </tr>
+	    </tbody>
+    </table>
+
+       // No exemplo ACIMA, utilizamos <thead> e <tbody> apenas para deixar o code semantico (Visualmente nada foi salterado no navegador).
+       	    // Além disso, substituimos a <td> que estavam nas linhas 298 e 299, por <th>.
+       	        // Essa alteração também não muda nada visualmente, porém deixa o code organizado (semantico).
+       	        // Dessa forma, sabemos que o <th></th>, se trata do cabeçario da tabela.
+       	            // Vale ressaltar que <td> também entragaria o mesmo resultado.
+
+// COLSPAN --------------------------------------------------------------------------
+
+<td colspan="5">Rio de Janeiro</td>
+
+    // O colspan="x" é inserido entre <td> que ficam dentro da <tr>.
+    // A tabela tem linhas e colunas. porém, existe momentos que em uma tabela com 5 colunas, uma determinada linha apresente apenas 1 coluna.
+
+    // No code da linha 293, se adicionarmos mais uma linha na tabela da seguinte forma:
+
+    <tr>
+	    <td colspan="2">*Excerto Feriados</td> 
+	</tr>
+
+	// A tabela terá mais uma linha, nessa linha terá uma coluna com o tamanho de 2 (ocupando o espaço de 2).

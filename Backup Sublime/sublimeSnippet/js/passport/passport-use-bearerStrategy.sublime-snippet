@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+passport.use(
+    new BearerStrategy(async (token, done) => {
+
+        try {
+            //const { mail } = await securityManager.verifyAccessToken(token);
+            //const account = await accountManager.getByMail(mail);
+            
+            done(null, account, { token });
+        } catch (error) {
+            done(error);
+        }
+    })
+);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>passport.use.bearerStrategy</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js || source.jsx</scope>
+</snippet>

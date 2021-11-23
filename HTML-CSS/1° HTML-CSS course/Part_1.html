@@ -1,0 +1,267 @@
+ALFO = Inicia em uma linha e fecha em outra (ambos isoladamente). <--- Isso não faz parte do HTML (ANOTAÇÃO PESSOAL)
+CSS = Elemente que faz parte do CSS.
+
+<h1>+conteúdo</h1>
+
+    // é utilizado para criar titulos (textos com maior destaque).
+
+<p>+conteúdo</p>
+
+    // é utilizado para separar paragrafos (deixa o text bem dividido).
+
+<strong>+conteúdo</strong>
+
+    // Deixa o texto OU palavra referente em negrito (maior destaque).
+
+<em>+conteúdo</em>
+ 
+    // Deixa o text em italic (dando emphase em algo).
+    // Não tem problema usar uma tag dentro de outra.
+
+<!DOCTYPE html>
+
+    // Deve ser adicionado na primeira linha.
+    // Isso informa ao navegador qual versão do html está sendo utilizada.
+    // Usando esse code o navegador reconhece que se trata da versão mais recente.
+
+<html>+conteúdo</html>    // ALFO
+
+    // Funcina como um delimitador do html (onde incia e termina (também serve para informar o navegador)).
+    // Adiciona a 1° parte no inicio, é a 2° no final do code.
+
+<html lang="pt-br">+conteúdo</html>    // ALFO
+
+    // Define a linguagem da pagina (é uma vantagem para tradução automaticas).
+    // É adicionado dentro do html.
+
+<meta charset="utf-8">
+
+    // Formata o texto (evitando bugs de acentuação etc...).
+    // É adicionado dentro do limite do html (citado nas linhas 23 e 28).
+
+<title></title>
+
+    // Define um titulo para a pagina (O nome exibido na aba do navegador).
+    // É adicionado dentro do limite do html (citado nas linhas 23 e 28).
+
+<head></head>    // ALFO
+
+    // Funciona como um envelope, ele agrupa os dados (informações) que serão passados para o navegador.
+    // Vem antes do <body></body>.
+    // Não é adicionado dentro do <body></body> (Primeiramente inicia um deles depois encerra e dá inicio ao outro).
+
+<body></body>    // ALFO
+
+    // Funciona como um envelope, ele agrupa os dados (informações) que serão passados para o usuario.
+    // Vem depois do <head></head>.
+
+<x style="text-align: center">
+
+    // Deixa o texto referente no centralizado.
+    // Exemplo de aplicação: <p style="text-align: center;"> +conteúdo </p> (Esse paragrafo vai ficar centralizado).
+    // Isso é chamado de CSS inline, que só altera o conteudo referente (sendo bastante limitado) exibido também em 62 e 68.
+    // Desse modo é necessario aplica o code em cada área que deseja alterar.
+
+<x style="font-size: 20px">
+
+	// Define o tamanho da fonte do txt referente.
+	// Por padrão os texto ficam em 16px (Então adicionando qualquer numero acima de 16px, os text ficaram maiores).
+	// Exemplo de aplicação: <p style="font-size: 20px"> +conteúdo </p> (Esse paragrafo vai ficar com texto maior).
+
+<x style="font-size: 20px; text-align: center">
+
+	// Aplica mais de uma função simultaneamente ( apenas separando com ; ).
+
+	// A segunda forma de aplicar o CSS.
+
+    // dentro do <head></head> devemos adicionar <style></style>, dentro deles devemos citar onde queremos a alteração, depois abrimos {+code de alteração}. Veja a seguir.
+
+    <head>
+        <meta charset="utf-8">
+        <title>Barbearia Alura</title>
+
+        <style>
+        	p {
+        		font-size: 20px
+        	}
+        </style>
+    </head>
+
+    // O code exibido ACIMA terá o mesmo resultado que o inline, porém se aplica a todos os elementos citado.
+
+    // Temos ainda uma 3° Forma (mais comum), nessa usamos um arquivo externo.
+    // Para isso devemos criar um arquivo ( style.css ) e colocar ele na mesma pasta.
+    // Depois basta aplicar o code da linha 82 a 84.
+    // No <head> do HTML, devemos aplicar esse code <link rel="stylesheet" href="style.css">.
+    	// href  significa endereço de referencia (nesse caso é o style.css).
+    // Feito isso, terá o mesmo resultado do 1° e 2° Método.
+    // Usando o CSS dessa forma, outras paginas podem usar o mesmo estilo (CSS) apenas fazendo a linkagem.
+
+background: #COR    // CSS
+
+    // Esse code é aplicado no CSS, ele altera o fundo do elemento referente.
+
+        <style>
+        	p {
+        		font-size: 20px;
+        	 -> background: #CCCCCC  // cor cinza.
+        	}
+        </style>
+
+color: +COR    // CSS
+
+    // Altera a cor do elemento referente. Exemplo a seguir.
+
+    " Curso de programação <strong>completo</strong> "
+
+    strong {
+        color: red
+    }
+
+    // O nome 'completo' além de ficar em negrito, ganhou uma cor vermelha.
+    // Podemos usar o codigo das cores ou o proprio nome (EM INGLÊS).
+
+    // caso tenha mais de um elemento usando a tag <strong> todos eles ficaram vermelho, será necessario detalhar a localização do elemento foco. Exemplo.
+
+    " <p><em>As <strong>luas</strong> podem ser um pouco bipolar as vezes.<em></p> "
+    " <p>Mas embora instáveis, <strong>são amigáveis.</strong></p> "
+
+    // Nesse caso podemos especificar assim:
+
+    em strong {
+        color: red
+    }
+
+    // Indicamos que o elemento foco está depois do <em>. dessa forma anulamos o outro <strong>.
+
+    // Outra forma de fazer isso é aplicando o CSS inline. Exemplo.
+
+    " <p><em>As <strong style="color: red">luas</strong> podem ser um pouco bipolar as vezes.<em></p> "
+    " <p>Mas embora estáveis, <strong>são amigáveis.</strong></p> "
+
+
+<p id="missao">
+
+    // Utilizamos sistema de id como forma de localizar terminado elemento no HTML, e assim aplicar o CSS. Exemplo.
+
+    " <p><em>As <strong id="essalua">luas</strong> podem ser um pouco bipolar as vezes.<em></p> "
+    " <p>Mas embora instáveis, <strong>são amigáveis.</strong></p> "
+
+    // Feito isso no CSS ficaria assim:
+
+    #essalua {
+        font-size: 20px
+    }
+
+    // Sempre usando # no inicio (linha 150).
+    // Note que não necessario nenhum dos processos anteriores (linhas 122 e 135).
+
+
+<img src="banner.jpg">
+
+    // Esse comando carrega uma imagem externa (que esteja salva na mesma pasta que os demais codes).
+    // O nome ( 'banner.jpg' ) é alterado conforme o nome do arquivo da imagem.
+    // src = source = fonte.
+    // A posição desse code dentro do HTML influencia no local em que a imagem será carregada. Se você adicionar ele na prmeira posição do <body>, ele aparecera no topo do pagina.
+
+
+    // Para fazer modificações em uma imagem, 1° precisamos utilizar o id (apresentado anteriormente), definido o nome do id da imagem. chamamos ela no CSS e aplicamos as alterações.
+
+    <img id="banner" src="banner.jpg">
+
+    // no CSS:
+
+    #banner {
+        width: 100%
+    }
+
+    // 'width' altera a largura da imagem. Na linha 173, deixamos em 100%, isso significa que a imagem vai ocupar uma largura de 100% da pagina (de uma ponta a outra).
+    // 'height' modifica a altura da imagem (em px)
+
+
+<h2></h2>
+
+    // É usado para abrir uma nova sessão (subtitulo de outra parte da pagina).
+
+
+<ul></ul>    // ALFO
+
+    // É uma lista sem ordem.
+    // A lista é um elemento block, isso significa que ela ocupa 100% da largura da pagina (Mesmo não usando todo o espaço).
+    // Precisamos também listar cada item individualmente, usando <li></li> (list item).
+    //Exemplo:
+
+        <ul>
+            <li class="itens">Atendimento aos Clientes</li>
+            <li class="itens">Espaço diferenciado</li>
+            <li class="itens">Localização</li>
+            <li class="itens">Profissionais Qualificados</li>
+        </ul>
+
+
+<ol></ol>    // ALFO
+
+    // É uma lista ordenada.
+
+    // Além de deixarmos essa informação no HTML, precisamos listar cada item individualmente, usando <li></li> (list item).
+
+<x class="+nome"></x>
+
+    // Tem a mesma função do <x id="+nome">. porém, ele permite utiliza varias vezes em diferentes elementos.
+    // o <x id="+nome"> só permite um elemento por id. Se tiver 5 item, teriamos que criar 5 id para cada um deles.
+    // Qualquer nome que ser adicionado em "+nome" será o id do elemento referente.
+
+    // A referencia a Class no CSS ficara assim:
+    //Obs: Precisa ter o ponto no inicio.
+
+    .+nome {
+        +conteúdo
+    }
+
+
+font-style: italic    // CSS
+
+    // Deixa o texto em italic. diferente do <em>, esse é aplicado dentro do CSS, é pode atingir mais elementos.
+
+<div></div>    // ALFO
+
+    // Divide o conteúdo.
+    // A divisão feita pelo <div></div> não é visual, ao atualizar o site não ocorrerar nenhuma alteração.
+    // Auxilia na organização (para o desenvilvedor) das marcações e outras alterações que podem ser feita em todo o conteúdo que estiver dentro da <div>.
+
+
+    // Uma tag pode ter um comportamento block (é quando uma tag mesmo não preenchendo completamente um espaço, impede outros elementos de utilizarem) (isso se chama block).
+    // já uma imagem (img) permite que conteúdo se posicionem ao lado (isso se chama inline).
+
+display: inline-block;    // CSS
+
+    // Permite que elemento ocupe somente o tamanho do conteúddo referente. também permite alterar a largura e espaçamento
+
+vertical-align: top;    // CSS
+
+    // Deixa o conteúdo centralizado no topo (apartir da linha vertical).
+    // para deixar em outra posição devenos trocar o nome 'top' pelo desejado.
+
+padding: 20px;    // CSS
+
+    // Aplica um espaçamento interno em todos os lados.
+    // Ov valor 20px pode ser alterado.
+
+    .beneficios {
+        background: #FFFFFF;
+     -> padding: 20px;
+    }
+
+
+padding-left: 20px;    // CSS
+
+    // Aplica um espaçamento interno para a esquerda.
+
+<header></header>    // ALFO
+
+    // É adicionado para o cabeçalho da pagina (no topo).
+    // Exemplo:
+
+    <header>
+        Barbearia Alura
+    </header>

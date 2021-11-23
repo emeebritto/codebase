@@ -1,0 +1,68 @@
+function setShineSideWASDLayer1 (sourceLight, colorLight, lastSourceLight){
+	futurePositionShineW = sourceLight-39;
+	futurePositionShineA = sourceLight-1;
+    futurePositionShineS = sourceLight+39;
+	futurePositionShineD = sourceLight+1;
+	for (var i = 0; i <= mapa.length; i++){
+		if (futurePositionShineW == mapa[i]) {
+			lastColorW = bottonList[sourceLight-40].style.backgroundColor;
+			lastOpacityW = bottonList[sourceLight-40].style.opacity;
+
+			bottonList[sourceLight-40].style.backgroundColor= colorLight;
+			bottonList[sourceLight-40].style.opacity= "50%";
+			ShineSideWLayer1 = true;
+         /*	setShineSideWDLayer1();*/
+		}
+		if (futurePositionShineA == mapa[i]) {
+			lastColorA = bottonList[sourceLight-2].style.backgroundColor;
+			lastOpacityA = bottonList[sourceLight-2].style.opacity;
+
+			bottonList[sourceLight-2].style.backgroundColor= colorLight;
+			bottonList[sourceLight-2].style.opacity= "50%";
+			ShineSideALayer1 = true;
+         /*	setShineSideAWLayer1();*/
+		}
+		if (futurePositionShineS == mapa[i]) {
+			lastColorS = bottonList[sourceLight+38].style.backgroundColor;
+			lastOpacityS = bottonList[sourceLight+38].style.opacity;
+
+			bottonList[sourceLight+38].style.backgroundColor= colorLight;
+			bottonList[sourceLight+38].style.opacity= "50%";
+			ShineSideSLayer1 = true;
+         /*	setShineSideSALayer1();*/
+		}
+		if (futurePositionShineD == mapa[i]) {
+			lastColorD = bottonList[sourceLight].style.backgroundColor;
+			lastOpacityD = bottonList[sourceLight].style.opacity;
+
+			bottonList[sourceLight].style.backgroundColor= colorLight;
+			bottonList[sourceLight].style.opacity= "50%";
+			ShineSideDLayer1 = true;
+         /*	setShineSideDSLayer1();*/
+		}
+	}
+	if (ShineSideWLayer1 != true){
+		lastColorW = bottonList[sourceLight-40].style.backgroundColor;
+		lastOpacityW = bottonList[sourceLight-40].style.opacity;
+		ShineSideWLayer1 = false;
+	 /*	setShineSideWDLayer1();*/	
+	}
+	if (ShineSideALayer1 != true){
+		lastColorA = bottonList[sourceLight-2].style.backgroundColor;
+		lastOpacityA = bottonList[sourceLight-2].style.opacity;
+		ShineSideALayer1 = false;
+	 /*	setShineSideAWLayer1();*/		
+    }
+    if (ShineSideSLayer1 != true){
+		lastColorS = bottonList[sourceLight+38].style.backgroundColor;
+		lastOpacityS = bottonList[sourceLight+38].style.opacity;
+		ShineSideSLayer1 = false;
+	 /*	setShineSideSALayer1();*/
+    }
+    if (ShineSideDLayer1 != true){
+		lastColorD = bottonList[sourceLight].style.backgroundColor;
+		lastOpacityD = bottonList[sourceLight].style.opacity;
+		ShineSideDLayer1 = false;
+	 /*setShineSideDSLayer1();*/
+    }
+}

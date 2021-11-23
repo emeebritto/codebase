@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+.box__linkToLogin {
+	display: flex;
+	background-color: rgb(0 0 0 / 23%);
+	border-radius: 15px;
+	height: 50px;
+	top: 12%;
+	position: relative;
+	width: 204px;
+	margin-left: 16%;
+	align-items: center;
+}
+
+.box__linkToLogin:hover {
+	cursor: pointer;
+}
+
+.title_linkToLogin {
+	color: white;
+	font-weight: bold;
+	font-family: 'Quicksand', sans-serif;
+}
+
+.icon_linkToLogin {
+	margin: 0px 16px 0px 15px;
+	transform: rotate(-180deg);
+}
+
+.box__campo_Login{
+	position: relative;
+	top: 14%;
+	background-color: rgb(0 0 0 / 25%);
+	border-radius: 15px;
+	border: 2px solid #0E1271;
+	box-shadow: 5px 5px 25px #091450;
+	height: 290px;
+	margin-left: 16%;
+	width: 400px;
+}
+
+.title_SignIn {
+	color: white;
+	padding-bottom: 5px;
+	margin: 14px 0px 15px 20px;
+	width: 66px;
+	border-bottom: 2px solid #0A1F50;
+	font-size: 1.1em;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.campo_Login {
+	display: flex;
+	flex-direction: column;
+	margin: 0px 0px 0px 20px;
+}
+
+.title_Login {
+	color: white;
+	margin: 15px 0px 10px 0px;
+	font-family: 'Quicksand', sans-serif;
+}
+
+.input_Login {
+	background-color: rgb(0 0 0 / 10%);
+	border: none;
+	border-bottom: 3px solid #141A99;
+	border-radius: 8px;
+	color: white;
+	outline: none;
+	padding: 0px 10px 0px 10px;
+	width: 340px;
+	height: 32px;
+}
+
+.input_Login:focus {
+	border-bottom: 3px solid #114EE5;
+}
+
+.btn_SignIn {
+	margin-top: 25px;
+	margin-left: 46%;
+	border: none;
+	color: white;
+	font-weight: bold;
+	background-color: #333DD8;
+	width: 180px;
+	height: 40px;
+	outline: none;
+	border-radius: 13px;
+	transition: 700ms;
+}
+
+.btn_SignIn:hover {
+    cursor: pointer;
+	background-color: #1C2390;
+}
+
+.box__alert_AccountInvalid {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 14px;
+    top: 66%;
+    left: 17%;
+    width: 22vw;
+    height: 7vh;
+    background-color: #C30000;
+    box-shadow: 5px 5px 30px rgb(0 0 0 / 80%);
+    transition: 700ms;
+}
+
+.txt_accountInvalid {
+	color: white;
+}

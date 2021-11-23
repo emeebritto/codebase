@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+<Router>
+	<Switch>
+		<Route exact path="/">
+			<${1:Component}/>
+		</Route>
+	</Switch>
+</Router>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>rcr.init</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js || source.jsx</scope>
+</snippet>

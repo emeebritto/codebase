@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>CODA - Saved</title>
+		<meta name="viewport" content="width=device-width">
+
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Abel&family=Inconsolata:wght@300;400&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/header.css">
+		<link rel="stylesheet" href="css/nav_float.css">
+		<link rel="stylesheet" href="css/boxInforAccount.css">
+		<link rel="stylesheet" href="css/darcula.css">		
+		<link rel="stylesheet" href="css/bookmarks/gridSystem__Bookmarks.css">
+		<link rel="stylesheet" href="css/bookmarks/myBookMarks.css">
+		<link rel="icon" href="assets/icon.png">
+	</head>
+
+	<body>
+
+<!------------------------------------------------------ topo da pagina inicial -->
+
+		<header class="top__pag">
+			<a href="index.html" id="tagAheader">
+				<img class="top__logo__img" src="assets/img/logo_coda.png">
+			</a>
+			<input class="top__search" type="search" name="search" placeholder="Search">
+
+			<section class="infoField">
+				<img id="infoField__icon_notification" src="assets/icons/notifications_white_24dp.svg">
+				<img id="infoField__icon_info" src="assets/icons/info_white_24dp.svg">
+			</section>
+		</header>
+
+<!------------------------------------------------------ bookmarks do usuário -->
+
+		<section class="container">
+
+			<main class="main">
+				<img src="https://i.gifer.com/IuFl.gif" class="imgbasic">
+				<h1 class="text1">Ops... Parece que você tentou acessar um conteúdo indisponivel</h1>
+				<p class="text2">Está pagina ainda está em desenvolvimento, volte mais tarde. alías, mais tarde não, proxima semana :)</p>
+			</main>
+
+<!------------------------------------------------------ menu de navegação (float) -->
+
+			<nav class="nav_float">
+
+				<section id="nav_link__search">
+					<section class="nav_buttons">
+						<div class="block_icon">
+							<img class="block_icon_iconPosition" src="assets/icons/search_white_24dp.svg" type="svg">
+						</div>
+						<div class="box_titleSection">
+						    <p id="box_titleSection_search" class="nav_titleSection">Search</p>
+						</div>
+						<div class="box__search" style="display: none;">
+							<input class="input_search" type="text" name="Search" placeholder="Search">
+							<img class="img_search" src="assets/icons/search_white_24dp.svg">
+						</div>
+					</section>
+			    </section>
+
+				<section id="nav_link__account" style="display: none;">
+					<section class="nav_buttons">
+						<div class="block_imgUser">
+							<img class="imgUser" src="assets/img/img-perfil.png">
+						</div>
+						<div class="box_titleSection">
+						    <p id="box_titleSection_account" class="nav_titleSection">Account</p>
+						</div>
+						<div class="box_inforAccount" style="display: none;">
+							<img class="box_inforAccount_imgAccount" src="assets/img/img-perfil.png">
+							<p class="box_inforAccount_nameUser">Emerson_Britto</p>
+							<p class="box_inforAccount_idUser">ID: 98657473</p>
+							<section class="buttons__confi_logOut">
+								<div class="box_button__config"></div>
+							    <button class="box_inforAccount_logOut">Log out</button>
+							</section>
+						</div>
+					</section>
+				</section>
+
+                <section id="nav_link__SignUpIn">
+					<section class="nav_buttons">
+						<div class="block_icon__login">
+							<img class="block_icon_iconPosition" src="assets/icons/login_white_24dp.svg">
+						</div>
+						<div class="box_titleSection">
+						    <p id="box_titleSection_SignUpIn" class="nav_titleSection">Sign Up/In</p>
+						</div>
+						<div class="box_select_SignUp_SignIn" style="display: none;">
+							<button class="SignUp_SignIn__button" id="button_signIn" onclick="redirectlogin()">Sign in</button>
+							<button class="SignUp_SignIn__button" id="button_signUp" onclick="redirectSignUp()">Sign up</button>
+						</div>
+					</section>
+                </section>
+
+
+				<a id="nav_link__codeEitor" href="index.html">
+					<section class="nav_buttons">
+						<div id="block_icon__codeEditor" class="block_icon">
+							<img class="block_icon_iconPosition" src="assets/icons/code_white_24dp.svg" type="svg">
+						</div>
+						<div id="box_titleSection_CodeEditor" class="box_titleSection">
+						    <p class="nav_titleSection">Code Editor</p>							
+						</div>
+
+					</section>					
+				</a>
+
+				<a id="nav_link__myPost" href="myPosts.html">
+					<section class="nav_buttons">
+						<div class="block_icon">
+							<img class="block_icon_iconPosition" src="assets/icons/library_books_white_24dp.svg" type="svg">
+						</div>
+						<div class="box_titleSection">
+						    <p id="box_titleSection_MyPost" class="nav_titleSection">My Posts</p>
+						</div>
+					</section>
+			    </a>
+
+				<a id="nav_link__bookmarks" href="bookmarks.html">
+					<section class="nav_buttons">
+						<div class="block_icon__active">
+							<img class="block_icon_iconPosition" src="assets/icons/bookmarks_white_24dp.svg" type="svg">
+						</div>
+						<div class="box_titleSection">
+						    <p id="box_titleSection_bookmarks" class="nav_titleSection">Bookmarks</p>
+						</div>
+					</section>
+			    </a>
+
+				<a id="nav_link__community" href="community.html">
+					<section class="nav_buttons">
+						<div class="block_icon">
+							<img class="block_icon_iconPosition" src="assets/icons/forum_white_24dp.svg" type="svg">
+						</div>
+						<div class="box_titleSection">
+						    <p id="box_titleSection_community" class="nav_titleSection">Community</p>
+						</div>
+					</section>
+			    </a>
+			</nav>
+
+		</section>
+
+        <script src="js/loginChecker.js"></script>
+        <script src="js/command__shortcut.js"></script>
+	    <script src="js/openSearch.js"></script>
+	    <script src="js/redirectSign.js"></script>
+	    <script src="js/boxInforAccount.js"></script>
+	</body>
+</html>

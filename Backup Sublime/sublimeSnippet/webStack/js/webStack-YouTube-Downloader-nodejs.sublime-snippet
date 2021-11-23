@@ -1,0 +1,42 @@
+<snippet>
+	<content><![CDATA[
+const playlist = [
+    {
+        title: "What is DevOps",
+        videoUrl: "https://www.youtube.com/watch?v=mBBgRdlC4sc",
+    },
+    {
+        title: "Introduction To DevOps ",
+        videoId: "Me3ea4nUt0U",
+        videoUrl: "https://www.youtube.com/watch?v=Me3ea4nUt0U",
+    },
+    {
+        title: "DevOps Tutorial For Beginners ",
+        videoId: "YSkDtQ2RA_c",
+        videoUrl: "https://www.youtube.com/watch?v=YSkDtQ2RA_c",
+    },
+];
+const fs = require("fs");
+const ytdl = require("ytdl-core");
+const length = playlist.length;
+
+playlist.forEach((pl, i) => {
+    const { videoUrl, title } = pl;
+    const item = i + 1;
+
+    const writeableStream = fs.createWriteStream(`${title}.mp4`);
+
+    writeableStream.on('finish', () => {
+        console.log(`${item}/${length} - ${title} downloaded successfully`);
+    });
+
+    ytdl(videoUrl, {
+        format: "mp4",
+    }).pipe(writeableStream);
+});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>youtube Downloader node-ytdl-core</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js || source.jsx</scope>
+</snippet>
