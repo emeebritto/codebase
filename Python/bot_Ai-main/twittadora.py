@@ -1,9 +1,9 @@
 # importando os módulos  
-import os 
+import os
 import tweepy  
-import requests 
- 
-   
+import requests
+
+
 # detalhes pessoais 
 consumer_key = "
 consumer_secret = "
