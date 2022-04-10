@@ -1,9 +1,0 @@
-<snippet>
-	<content><![CDATA[
-${1:arr}.reduce((${2:total}, ${3:value}) => ${4:total += value}, ${5:0})
-]]></content>
-	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>arr.reduce</tabTrigger>
-	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<scope>source.js || source.jsx</scope>
-</snippet>

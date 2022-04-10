@@ -1,9 +1,0 @@
-<snippet>
-	<content><![CDATA[
-${(props) => (props.${1:lyrics} ? "${2:blur( 3.5px )}" : "${3:blur( 0px )}")}
-]]></content>
-	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>styled.prop</tabTrigger>
-	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<scope>source.js || source.jsx</scope>
-</snippet>

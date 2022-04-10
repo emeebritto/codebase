@@ -1,9 +1,0 @@
-<snippet>
-	<content><![CDATA[
-const bcrypt = require('bcrypt');
-]]></content>
-	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>imp.bcrypt</tabTrigger>
-	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<scope>source.js || source.jsx</scope>
-</snippet>
