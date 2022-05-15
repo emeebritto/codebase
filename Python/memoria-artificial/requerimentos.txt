@@ -1,0 +1,7 @@
+chatterbot
+chatterbot_corpus
+SpeechRecognition
+gtts
+playsound
+pyaudio
+
