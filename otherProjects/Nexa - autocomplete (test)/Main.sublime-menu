@@ -1,0 +1,48 @@
+[
+    {
+        "id": "preferences",
+        "children": [
+            {
+                "id": "package-settings",
+                "children": [
+                    {
+                        "caption": "഼ nexa",
+                        "children": [
+                            {
+                                "caption": "Settings - Default",
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/Nexa/Nexa.sublime-settings"
+                                }
+                            },
+                            {
+                                "caption": "Settings - User",
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Nexa.sublime-settings"
+                                }
+                            },
+                            {
+                                "caption": "-"
+                            },
+                            {
+                                "caption": "Key Bindings - Default",
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/Nexa/Default.sublime-keymap"
+                                }
+                            },
+                            {
+                                "caption": "Key Bindings - User",
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default.sublime-keymap"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+        ]
+    }
+]
