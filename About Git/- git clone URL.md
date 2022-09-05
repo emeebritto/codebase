@@ -17,7 +17,7 @@
 - git push REPOSITORY LOCAL-BRANCH
 - git pull  REPOSITORY LOCAL-BRANCH
 - git branch BRANCH-NAME
-- git branch (view branch list
+- git branch (view branch list)
 - git checkout BRANCH-NAME (switch to branch)
 - git checkout -b BRANCH-NAME (create and switch to branch)
 - git checkout -- FILE-NAME (restore files)
