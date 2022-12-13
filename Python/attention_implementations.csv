@@ -1,0 +1,11 @@
+name,framework,models,url
+seq2seq ,Keras,RNNSearch, https://github.com/farizrahman4u/seq2seq
+Keras Attention Mechanism,Keras,RNNSearch + application directly on inputs, https://github.com/philipperemy/keras-attention-mechanism
+Attention-over-Attention,tensorflow,Attention-over-Attention, https://github.com/OlavHN/attention-over-attention
+textClassifier,Keras,Hierarchical Attention Networks, https://github.com/richliao/textClassifier
+snli-entailment,Keras,Rocktaschel's LSTM with attention, https://github.com/shyamupa/snli-entailment
+Sockeye,Apache MXNet,"RNNSearch,Transformer Models with self-attention", https://github.com/awslabs/sockeye
+Attention Is All You Need,PyTorch,Transformer, https://github.com/jadore801120/attention-is-all-you-need-pytorch
+transformer,tensorflow,Transformer, https://github.com/DongjunLee/transformer-tensorflow
+OpenNMT,PyTorch,"RNNSearch, Luong’s global, Transformer", http://opennmt.net/OpenNMT-py/onmt.modules.html#attention
+Attention Sum Reader,Theano,Attention Sum Reader, https://github.com/rkadlec/asreader
