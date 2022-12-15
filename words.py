@@ -1,6 +1,7 @@
 CNN
 RNN
 CRF
+BPTT
 GRU
 GAN (Generator and discriminator)
 DCGAN (for spatial structure)
@@ -26,7 +27,6 @@ ELMo
 FORWARD
 FEED-FORWARD
 SEQ2SEQ
-
 
 pre-training + fine-tuning
 dynamic word embedding + BiLSTM + SELF-ATTENTION + GAN

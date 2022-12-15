@@ -174,14 +174,14 @@ HIDDEN_DIM = 4
 
 # Make up some training data
 training_data = [(
-	"the wall street journal reported today that apple corporation made money".split(),
-	"B I I I O O O B I O O".split()
-), (
-	"georgia tech is a university in georgia".split(),
-	"B I O O O O B".split()
-), (
-	"create a image".split(),
-	"<create>".split()
+	"create a image of a cat".split(),
+	"E E E E Q Q".split()
+),(
+	"create a image of beatiful city at night".split(),
+	"E E E E Q Q Q Q".split()
+),(
+	"create image of beatiful city at night".split(),
+	"E E E Q Q Q Q".split()
 )]
 
 word_to_ix = {}
@@ -190,7 +190,7 @@ for sentence, tags in training_data:
 		if word not in word_to_ix:
 			word_to_ix[word] = len(word_to_ix)
 
-tag_to_ix = {"B": 0, "I": 1, "O": 2, START_TAG: 3, STOP_TAG: 4, "<create>": 5}
+tag_to_ix = { "E": 0, "Q": 1, START_TAG: 2, STOP_TAG: 3 }
 ix_to_tag = {val:key for key, val in tag_to_ix.items()}
 print("ix_to_tag", ix_to_tag)
 
@@ -225,7 +225,7 @@ for epoch in range(300):  # again, normally you would NOT do 300 epochs, it is t
 
 # Check predictions after training
 with torch.no_grad():
-	uInput = ["apple", "corporation", "made", "money"]
+	uInput = input("you: ").split()
 	print(uInput)
 	precheck_sent = prepare_sequence(uInput, word_to_ix)
 	print([ix_to_tag[ix] for ix in model(precheck_sent)[1]])
