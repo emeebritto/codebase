@@ -182,6 +182,9 @@ training_data = [(
 ),(
 	"create image of beatiful city at night".split(),
 	"E E E Q Q Q Q".split()
+),(
+	"create image of beatiful city at day, during summer, artstation".split(),
+	"E E E Q Q Q Q Q Q Q".split()
 )]
 
 word_to_ix = {}
@@ -225,10 +228,11 @@ for epoch in range(300):  # again, normally you would NOT do 300 epochs, it is t
 
 # Check predictions after training
 with torch.no_grad():
-	uInput = input("you: ").split()
-	print(uInput)
-	precheck_sent = prepare_sequence(uInput, word_to_ix)
-	print([ix_to_tag[ix] for ix in model(precheck_sent)[1]])
+	while True:
+		uInput = input("you: ").split()
+		print(uInput)
+		precheck_sent = prepare_sequence(uInput, word_to_ix)
+		print([ix_to_tag[ix] for ix in model(precheck_sent)[1]])
 # We got it!
 
 

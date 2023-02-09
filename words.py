@@ -27,6 +27,5 @@ ELMo
 FORWARD
 FEED-FORWARD
 SEQ2SEQ
-
 pre-training + fine-tuning
 dynamic word embedding + BiLSTM + SELF-ATTENTION + GAN
